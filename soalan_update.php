@@ -3,7 +3,7 @@ require "functions.php";
 
 $id = $_GET["id"];
 $soalan = query("SELECT * FROM soalan WHERE IDSoalan = '$id'")[0];
-var_dump($soalan['IDSoalan']);
+
 
 if (isset($_POST["submit"])) {
     //cek berjaya diubah ke tak

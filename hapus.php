@@ -16,7 +16,7 @@ if ( hapus($id,$table,$fill) > 0) {
         </script>
         
         ";
-    }elseif ($table == "guru") {
+    }elseif ($table == "guru" || "pelajar") {
         echo "
         <script>
         alert('Data berjaya dihapus !');
@@ -26,26 +26,10 @@ if ( hapus($id,$table,$fill) > 0) {
         ";
     }
     
-}else{
-    if ($table == "soalan") {
-        echo "
+}else{ echo "
         <script>
         alert('Data tidak berjaya dihapus.');
-        document.location.href = 'soalan_senarai.php';
-        </script>
-        
-        ";
-    }
-   
-    if ($table == "guru") {
-        echo "
-        <script>
-        alert('Data tidak berjaya dihapus !');
-        document.location.href = 'guru_senarai.php';
-        </script>
-        
-        ";
-    }
-    mysqli_error($conn);
+        document.location.href = 'home_guru.php';
+        </script>";  
 }
 ?>

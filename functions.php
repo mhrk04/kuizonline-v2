@@ -106,6 +106,20 @@ function kelaslist(){
         echo "<option value='$kelas[IDKelas]'>$kelas[Nama_Kelas]</option>";
     }
 }
+function ubahguru ($data){
+    global $conn;
+    $IDGuru = htmlspecialchars($data["IDGuru"]);
+    $Nama_Guru = htmlspecialchars($data["Nama_Guru"]);
+    $KataLaluan = htmlspecialchars($data["KataLaluan"]);
+
+    $query = "UPDATE guru SET
+            Nama_Guru = '$Nama_Guru',
+            KataLaluan = '$KataLaluan'
+            where IDGuru = '$IDGuru'";
+    mysqli_query($conn, $query);
+    return mysqli_affected_rows($conn);
+
+}
 
 function ubah($data){
     global $conn;
