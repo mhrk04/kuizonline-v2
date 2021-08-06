@@ -55,7 +55,7 @@ $pelajar = query("SELECT * FROM pelajar");
         <?php $i++; ?>
         <?php endforeach; ?>
     </table>
-    
+
 <!-- INI batas ke senarai pelajar -->
 
     <h3>Senarai Pelajar</h3>
@@ -77,7 +77,7 @@ $pelajar = query("SELECT * FROM pelajar");
             <td><?= $pel["IDKelas"]; ?></td>
             <td><?= $pel["KataLaluan"]; ?></td>
             <td>
-                <a href="ubah.php?id=<?= $pel['IDPelajar']; ?>">Ubah</a> |
+                <a href="pelajar_update.php?id=<?= $pel['IDPelajar']; ?>">Ubah</a> |
                 <a href="hapus.php?id=<?= $pel['IDPelajar']; ?>&table=pelajar&fill=IDPelajar" onclick="return confirm('Yakin hendak dipadam');">Padam</a>
             </td>
         </tr>

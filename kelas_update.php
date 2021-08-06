@@ -14,7 +14,7 @@ if (isset($_POST["submit"])) {
         echo "
         <script>
         alert('data berjaya diubah');
-        document.location.href = 'kelas_senarai.php';
+        document.location.href = 'kelas_insert.php';
         </script>
         
         ";
@@ -22,7 +22,7 @@ if (isset($_POST["submit"])) {
         echo "
         <script>
         alert('data tidak berjaya diubah');
-        document.location.href = 'kelas_senarai.php';
+        document.location.href = 'kelas_insert.php';
         </script>
         
         ";
@@ -64,6 +64,6 @@ if (isset($_POST["submit"])) {
             </tr>
         </table>
     </form>
-    <a href="kelas_senarai.php">Kembali</a>
+    <a href="kelas_insert.php">Kembali</a>
 </body>
 </html>

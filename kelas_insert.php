@@ -1,5 +1,6 @@
 <?php 
 require "functions.php";
+$kelas = query("SELECT * FROM kelas");
 
 //cek bile tekan tambah
 if (isset($_POST["submit"])) {
@@ -8,6 +9,7 @@ if (isset($_POST["submit"])) {
         echo "
         <script>
         alert('data berjaya ditambah');
+        document.location.href = 'kelas_insert.php';
         </script>
         
         ";
@@ -38,12 +40,36 @@ if (isset($_POST["submit"])) {
 </head>
 
 <body>
-    <h3 class="panjang">Tambah kelas</h3>
-    <form class="panjang" action="" method="post">
+    <h2>Senarai Kelas</h2>
+    <br><br>
+    <table border="1" cellpadding="10" cellspacing="0">
+        <tr>
+            <th>Bil.</th>
+            <th>ID Kelas</th>
+            <th>Nama Kelas</th>
+            <th>Aksi</th>
+        </tr>
+        <?php $i = 1; ?>
+        <?php foreach ($kelas as $row) :?>
+        <tr>
+            <td><?= $i; ?></td>
+            <td><?= $row["IDKelas"]; ?></td>
+            <td><?= $row["Nama_Kelas"]; ?></td>
+            <td>
+                <a href="kelas_update.php?IDKelas=<?= $row['IDKelas']; ?>">Ubah</a> |
+                <a href="hapus.php?id=<?= $row['IDKelas']; ?>&table=kelas&fill=IDKelas" onclick="return confirm('Yakin hendak dipadam');">Padam</a>
+            </td>
+        </tr>
+        <?php $i++; ?>
+        <?php endforeach; ?>
+    </table>
+
+    <h2>Tambah kelas</h2>
+    <form  action="" method="post">
         <table>
             <tr>
-                <td>ID kelas</td>
-                <td> <input type="text" name="IDKelas" placeholder="max 3 char"></td>
+                <td><label for="IDKelas"> ID kelas</label></td>
+                <td> <input type="text" name="IDKelas" id="IDKelas" placeholder="max 3 char"></td>
             </tr>
             <tr>
                 <td> Nama kelas</td>

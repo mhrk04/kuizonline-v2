@@ -85,6 +85,27 @@ function tambahkelas($data){
      return mysqli_affected_rows($conn);
 }
 
+function tambahguru($data){
+    global $conn;
+     //ambil data dari setiap elemen form
+     $IDGuru = htmlspecialchars($data["IDGuru"]);
+     $Nama_Guru = htmlspecialchars($data["Nama_Guru"]);
+     $KataLaluan = htmlspecialchars($data["KataLaluan"]);
+
+     // cek ID dah ade blum sudah ada atau belum
+     $result = mysqli_query($conn, "SELECT IDGuru FROM guru WHERE IDGuru = '$IDGuru' ");
+     if( mysqli_fetch_assoc($result) ) {
+         echo "<script>
+                 alert('ID sudah digunakan!')
+               </script>";
+         return false;
+     }
+         //query insert data
+    $query = "INSERT INTO guru VALUES ('$IDGuru','$Nama_Guru','$KataLaluan') ";
+    mysqli_query($conn, $query);
+    return mysqli_affected_rows($conn);
+}
+
 function hapus($id,$table,$fill){
     global $conn;
     mysqli_query($conn,"DELETE FROM $table WHERE $fill = '$id'");

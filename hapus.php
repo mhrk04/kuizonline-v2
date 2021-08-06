@@ -8,23 +8,38 @@ require "functions.php";
     $table = $_GET["table"];
 
 if ( hapus($id,$table,$fill) > 0) {
-    if ($table == "soalan") {
-        echo "
-        <script>
-        alert('Data berjaya dihapus !');
-        document.location.href = 'soalan_senarai.php';
-        </script>
-        
-        ";
-    }elseif ($table == "guru" || "pelajar") {
-        echo "
-        <script>
-        alert('Data berjaya dihapus !');
-        document.location.href = 'guru_senarai.php';
-        </script>
-        
-        ";
+    switch ($table) {
+        case 'soalan':
+            echo "
+         <script>
+         alert('Data berjaya dihapus !');
+         document.location.href = 'soalan_senarai.php';
+         </script>";
+            break;
+        case 'pelajar':
+                echo "
+             <script>
+             alert('Data berjaya dihapus !');
+             document.location.href = 'guru_senarai.php';
+             </script>";
+                break;
+        case 'guru' :
+            echo "
+           <script>
+           alert('Data berjaya dihapus !');
+           document.location.href = 'guru_senarai.php';
+           </script>";
+           break;
+        case 'kelas' :
+            echo "<script>
+            alert('Data berjaya dihapus !');
+            document.location.href = 'kelas_insert.php';
+            </script>";
+
     }
+   
+        
+  
     
 }else{ echo "
         <script>
