@@ -1,8 +1,11 @@
 <?php 
 session_start();
 require "functions.php";
-if( isset($_SESSION["login"]) ) {
-	header("Location: index.php");
+if( $_SESSION["status"] == "guru" ) {
+	header("Location: guru_senarai.php");
+	exit;
+}elseif ($_SESSION["status"] == "pelajar") {
+    header("Location: home_pelajar.php");
 	exit;
 }
 
@@ -19,7 +22,6 @@ if (isset($_POST['userid'])) {
             $_SESSION['username'] = $pelajar['IDPelajar'];
             $_SESSION['nama'] = $pelajar['Nama_Pelajar'];
             $_SESSION['status'] = 'pelajar';
-            $_SESSION['login'] = TRUE;
             break;
         }
 
@@ -33,13 +35,17 @@ if (isset($_POST['userid'])) {
                 $_SESSION['username'] = $guru['IDGuru'];
                 $_SESSION['nama'] = $guru['Nama_Guru'];
                 $_SESSION['status'] = 'guru';
-                $_SESSION['login'] = TRUE;
                 break;
             }
         }
     }
     if ($jumpa == TRUE) {
-        header("Location: index.php");
+        if ( $_SESSION["status"] == "guru" ) {
+            header("Location: guru_senarai.php");
+        }else {
+            header("Location: home_pelajar.php");
+        }
+        
     }
     else
         echo "<script>alert('kesalahan pada username atau katalaluan');window.location='login.php'</script>";

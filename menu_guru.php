@@ -1,3 +1,10 @@
+<?php 
+session_start();
+if ($_SESSION['status'] != "guru") {
+    header("Location: login.php");
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,8 +18,10 @@
     </style>
 </head>
 <body>
+    <center>
     <nav>
         <ul>
+            <li><a href="home_guru.php">Home</a></li>
             <li><a href="soalan_senarai.php">Soalan Kuiz</a></li>
             <li><a href="laporan_pilihan.php">Laporan Prestasi</a></li>
             <li><a href="guru_senarai.php">Senarai Guru & Pelajar</a></li>
@@ -23,5 +32,6 @@
             <li><a href="import.php">Import Data</a></li>
         </ul>
     </nav>
+    </center>
 </body>
 </html>
