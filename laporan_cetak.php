@@ -25,7 +25,6 @@ require "functions.php";
         <?php
         $Pilihan = $_POST["pilihan"];
         $IDKelas = $_POST["IDKelas"];
-        var_dump($IDKelas);
         $Peratus = $_POST["peratus"];
         $sql = "select * from kuiz join pelajar on kuiz.IDPelajar = pelajar.IDPelajar 
         join kelas on pelajar.IDKelas = kelas.IDKelas group by kuiz.IDPelajar";
@@ -33,7 +32,7 @@ require "functions.php";
         switch ($Pilihan){
             case 1 : $syarat = "";
                     $tajuk = "PENCAPAIAN KESELURUHAN"; break;
-            case 2 : $syarat = "having kelas.IDKelas ='$IDKelas'";
+            case 2 : $syarat = "having kelas.IDKelas = '$IDKelas'";
                     $tajuk = "PENCAPAIAN MENGIKUT KELAS"; break;
             case 3 :
                 if ($Peratus == 80) {
@@ -65,7 +64,7 @@ require "functions.php";
                 break;
         }
         $bil = 1;
-        $sql = $sql.$syarat; //cantum
+        $sql = $sql." ".$syarat; //cantum
         //echo $sql;
 
         $data = mysqli_query($conn, $sql);
