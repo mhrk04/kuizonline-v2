@@ -213,7 +213,7 @@ function cari($keyword){
 //fungsi sign up
 function registrasi($data){
     global $conn;
-// isi variable
+    // isi variable
     $IDPelajar = $data["IDPelajar"] ;
     $Nama_Pelajar = htmlspecialchars($data["Nama_Pelajar"]);
     $IDKelas = htmlspecialchars($data["IDKelas"]);
@@ -236,52 +236,21 @@ function registrasi($data){
           </script>";
         return false;
     }
-// cek passwod
-if( $KataLaluan !== $KataLaluan2 ) {
+    // cek passwod
+    if( $KataLaluan !== $KataLaluan2 ) {
     echo "<script>
             alert('konfirmasi password tidak sesuai!');
           </script>";
     return false;
-}
-// tambahkan userbaru ke database
-$query = "INSERT INTO pelajar VALUES ('$IDPelajar','$Nama_Pelajar','$IDKelas','$KataLaluan') ";
-
-mysqli_query($conn, $query);
-return mysqli_affected_rows($conn);
+    }    // tambahkan userbaru ke database
+    $query = "INSERT INTO pelajar VALUES ('$IDPelajar','$Nama_Pelajar','$IDKelas','$KataLaluan') ";
+    mysqli_query($conn, $query);
+    return mysqli_affected_rows($conn);
 
 }
 
-function import($data){
-    global $conn;
-    //var
-    $namajadual = $data['namatable'];
-    $namafail = $_FILES['namafail']['tmp_name'];
-    $fail = fopen($namafail,"r");
-    //pilihan pelajar atuu soalan
-    while (!feof($fail)) {
-        $medan = explode(",",fgets($fail));
-        if ($namajadual == "pelajar") {
-            $IDPelajar = $medan[0];
-            $Nama_Pelajar = $medan[1];
-            $IDKelas = $medan[2];
-            $KataLaluan = $medan[3];
-            $sql = "INSERT INTO pelajar VALUES ('$IDPelajar','$Nama_Pelajar','$IDKelas','$KataLaluan')";
-            mysqli_query($conn, $sql);
-            return mysqli_affected_rows($conn);
-        }
-        if ($namajadual == "soalan") {
-        $IDSoalan = $medan[0];
-        $soalan = $medan[1];
-        $piliha = $medan[2];
-        $pilihb = $medan[3];
-        $pilihc = $medan[4];
-        $jawapan = $medan[5];
-        $IDGuru = $medan[6];
-        $sql = "INSERT INTO soalan VALUES ('$IDSoalan','$soalan','$piliha','$pilihb','$pilihc','$jawapan','$IDGuru')";
-        mysqli_query($conn,$sql);
-        return mysqli_affected_rows($conn);
-        }
-    }
+function laporan(){
+    
 }
 
 ?>

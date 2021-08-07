@@ -14,7 +14,7 @@
     <nav>
         <ul>
             <li><a href="soalan_senarai.php">Soalan Kuiz</a></li>
-            <li><a href="">Laporan Prestasi</a></li>
+            <li><a href="laporan_pilihan.php">Laporan Prestasi</a></li>
             <li><a href="guru_senarai.php">Senarai Guru & Pelajar</a></li>
             <li><a href="pelajar_insert.php">Menambah Pelajar</a></li>
             <li><a href="guru_insert.php">Menambah Guru</a></li>
