@@ -219,11 +219,7 @@ function registrasi($data){
     $IDKelas = htmlspecialchars($data["IDKelas"]);
     $KataLaluan = mysqli_real_escape_string($conn, $data["KataLaluan"]);
     $KataLaluan2 = mysqli_real_escape_string($conn, $data["KataLaluan2"]);
-// cek dah isi belum
-// if (strlen($IDPelajar,$Nama_Pelajar,$IDKelas,$KataLaluan,$KataLaluan2) == 0) {
-//     $err = "Ruangan ini perlu diisi";
-//     return false;
-// }
+
 
     // cek ID dah ade blum sudah ada atau belum
     $result = mysqli_query($conn, "SELECT IDPelajar FROM pelajar WHERE IDPelajar = '$IDPelajar' ");
@@ -253,6 +249,39 @@ $query = "INSERT INTO pelajar VALUES ('$IDPelajar','$Nama_Pelajar','$IDKelas','$
 mysqli_query($conn, $query);
 return mysqli_affected_rows($conn);
 
+}
+
+function import($data){
+    global $conn;
+    //var
+    $namajadual = $data['namatable'];
+    $namafail = $_FILES['namafail']['tmp_name'];
+    $fail = fopen($namafail,"r");
+    //pilihan pelajar atuu soalan
+    while (!feof($fail)) {
+        $medan = explode(",",fgets($fail));
+        if ($namajadual == "pelajar") {
+            $IDPelajar = $medan[0];
+            $Nama_Pelajar = $medan[1];
+            $IDKelas = $medan[2];
+            $KataLaluan = $medan[3];
+            $sql = "INSERT INTO pelajar VALUES ('$IDPelajar','$Nama_Pelajar','$IDKelas','$KataLaluan')";
+            mysqli_query($conn, $sql);
+            return mysqli_affected_rows($conn);
+        }
+        if ($namajadual == "soalan") {
+        $IDSoalan = $medan[0];
+        $soalan = $medan[1];
+        $piliha = $medan[2];
+        $pilihb = $medan[3];
+        $pilihc = $medan[4];
+        $jawapan = $medan[5];
+        $IDGuru = $medan[6];
+        $sql = "INSERT INTO soalan VALUES ('$IDSoalan','$soalan','$piliha','$pilihb','$pilihc','$jawapan','$IDGuru')";
+        mysqli_query($conn,$sql);
+        return mysqli_affected_rows($conn);
+        }
+    }
 }
 
 ?>

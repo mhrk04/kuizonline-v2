@@ -20,6 +20,7 @@
             <li><a href="guru_insert.php">Menambah Guru</a></li>
             <li><a href="kelas_insert.php">Menambah Kelas</a></li>
             <li><a href="logout.php">Log Keluar</a></li>
+            <li><a href="import.php">Import Data</a></li>
         </ul>
     </nav>
 </body>
