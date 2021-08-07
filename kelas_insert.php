@@ -40,6 +40,11 @@ if (isset($_POST["submit"])) {
 </head>
 
 <body>
+    <nav>
+    <?php 
+        require "menu_guru.php";
+        ?>
+    </nav>
     <h2>Senarai Kelas</h2>
     <br><br>
     <table border="1" cellpadding="10" cellspacing="0">

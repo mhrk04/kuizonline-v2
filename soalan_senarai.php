@@ -42,13 +42,9 @@ if (isset($_POST["submit"])) {
 <body>
     <center>
     <nav>
-        <ul>
-            <li><a href="soalan_senarai.php">Soalan Kuiz</a></li>
-            <li><a href="guru_senarai.php">Senarai Pelajar dan Guru</a></li>
-            <li><a href="pelajar_insert.php">Menambah Pelajar</a></li>
-            <li><a href="guru_insert.php">Menambah Guru</a></li>
-            <li><a href="kelas_insert.php">Menambah Kelas</a></li>
-        </ul>
+       <?php 
+       require "menu_guru.php";
+       ?>
     </nav>
         <h2>Soalan</h2>
         <table border="1" cellspacing="0" cellpadding="5">

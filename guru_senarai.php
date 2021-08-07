@@ -23,13 +23,9 @@ $pelajar = query("SELECT * FROM pelajar");
     <h3>Senarai Guru</h3>
     <br>
     <nav>
-        <ul>
-            <li><a href="soalan_senarai.php">Soalan Kuiz</a></li>
-            <li><a href="guru_senarai.php">Senarai Pelajar dan Guru</a></li>
-            <li><a href="pelajar_insert.php">Menambah Pelajar</a></li>
-            <li><a href="guru_insert.php">Menambah Guru</a></li>
-            <li><a href="kelas_insert.php">Menambah Kelas</a></li>
-        </ul>
+        <?php 
+        require "menu_guru.php";
+        ?>
     </nav>
     <br><br>
     <table border="1" cellpadding="10" cellspacing="0">
