@@ -15,7 +15,7 @@ if (mysqli_num_rows($data) > 0) {
     document.location.href = 'jawab_ulangkaji.php';
     </script>";
 }
-
+//masukkan input user ke database
 if (isset($_POST['submit'])) {
         
     date_default_timezone_set("Asia/Kuala_Lumpur");

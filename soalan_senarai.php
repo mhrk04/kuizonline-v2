@@ -1,5 +1,5 @@
 <?php 
-session_start();
+require "menu_guru.php";
 if ($_SESSION['status'] != "guru") {
     header("Location: login.php");
     exit;}
@@ -45,11 +45,6 @@ if (isset($_POST["submit"])) {
 </head>
 <body>
     <center>
-    <nav>
-       <?php 
-       require "menu_guru.php";
-       ?>
-    </nav>
         <h2>Soalan</h2>
         <table border="1" cellspacing="0" cellpadding="5">
             <tr>
@@ -128,8 +123,9 @@ if (isset($_POST["submit"])) {
         </table>
         </form>
 <?php 
-$IDPelajar = $_POST['IDPelajar'];
+
 if (isset($_POST['padam'])) {
+    $IDPelajar = $_POST['IDPelajar'];
     $q = "DELETE FROM kuiz WHERE IDPelajar = '$IDPelajar'";
     mysqli_query($conn,$q);
 

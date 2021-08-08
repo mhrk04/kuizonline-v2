@@ -1,5 +1,7 @@
-<?php 
-session_start();
+<?php  
+require "menu_guru.php";
+
+
 if ($_SESSION['status'] != "guru") {
     header("Location: login.php");
     exit;}
@@ -39,11 +41,7 @@ if (isset($_POST["submit"])) {
     <title>Tambah Pelajar</title>
 </head>
 <body>
-    <nav>
-    <?php 
-        require "menu_guru.php";
-        ?>
-    </nav>
+    
     <h1>Tambah Pelajar</h1>
     <form action="" method="post">
         <table>

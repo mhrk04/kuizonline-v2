@@ -1,5 +1,5 @@
 <?php
-session_start();
+require "menu_guru.php";
 if ($_SESSION['status'] != "guru") {
     header("Location: login.php");
     exit;}
@@ -25,12 +25,6 @@ $pelajar = query("SELECT * FROM pelajar");
 <body>
     <center>
     <h3>Senarai Guru</h3>
-    <br>
-    <nav>
-        <?php 
-        require "menu_guru.php";
-        ?>
-    </nav>
     <br><br>
     <table border="1" cellpadding="10" cellspacing="0">
         <tr>

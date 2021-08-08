@@ -1,10 +1,10 @@
 <?php 
-session_start();
+require "menu_guru.php";
+
 if ($_SESSION['status'] != "guru") {
     header("Location: login.php");
     exit;}
 require "functions.php";
-require "menu_guru.php";
 if (isset($_POST['submit'])) {
     $namajadual = $_POST['namatable'];
     $namafail = $_FILES['namafail']['tmp_name'];

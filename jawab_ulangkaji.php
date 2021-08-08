@@ -1,5 +1,5 @@
 <?php
-session_start();
+require "menu_pelajar.php";
 if ($_SESSION['status'] != "pelajar") {
     header("Location: login.php");
     exit;}

@@ -1,5 +1,6 @@
 <?php 
-session_start();
+require "menu_guru.php";
+
 if ($_SESSION['status'] != "guru") {
     header("Location: login.php");
     exit;
@@ -39,9 +40,6 @@ if (isset($_POST["submit"])) {
     <title>Menambah Guru</title>
 </head>
 <body>
-<?php 
-        require "menu_guru.php";
-        ?>
     <h2>Tambah Guru</h2>
     <form action="" method="post">
         <table>
