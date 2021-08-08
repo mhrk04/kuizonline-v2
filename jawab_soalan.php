@@ -1,0 +1,60 @@
+<?php 
+session_start();
+if ($_SESSION['status'] != "pelajar") {
+    header("Location: login.php");
+    exit;}
+require "functions.php";
+
+?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="senarai.css">
+    <link rel="stylesheet" href="button.css">
+</head>
+
+<body>
+    <form action="jawab_semak.php" method="POST">
+        <table>
+            <caption>SOALAN KUIZ ONLINE</caption>
+            <tr>
+                <th>Bil</th>
+                <th>Soalan</th>
+            </tr>
+            <?php
+            $sql = "select * from soalan order by IDSoalan ASC";
+            $data = mysqli_query($conn, $sql);
+            $bil = 1;
+            while ($Soalan = mysqli_fetch_array($data)) {
+            ?>
+            <tr>
+                <td class="bil"><?php echo $bil;?></td>
+                <td>
+                    <!-- Soalan -->
+                     <p><?= $Soalan['Nama_Soalan']; ?></p>
+                    <!-- Pilihan Jawapan A -->
+                    <input type="radio" id="<?php echo $Soalan['Pilihan_A'];?>" name="<?php echo $Soalan['IDSoalan'];?>" value="A">
+                    <label for="<?php echo $Soalan['Pilihan_A'];?>"><?php echo "A. ".$Soalan['Pilihan_A'];?></label><br>
+                    <!-- pilihan jawapan  B -->
+                    <input type="radio" id="<?php echo $Soalan['Pilihan_B'];?>" name="<?php echo $Soalan['IDSoalan'];?>" value="B">
+                    <label for="<?php echo $Soalan['Pilihan_B'];?>"><?php echo "B. ".$Soalan['Pilihan_B'];?></label><br>
+                    <!-- Pilihan jawapan C -->
+                    <input type="radio" id="<?php echo $Soalan['Pilihan_C'];?>" name="<?php echo $Soalan['IDSoalan'];?>" value="C">
+                    <label for="<?php echo $Soalan['Pilihan_C'];?>"><?php echo "C. ".$Soalan['Pilihan_C'];?></label><br>
+                    
+                </td>
+            </tr>
+            <?php $bil = $bil + 1;} ?>
+        </table>
+        <button class="semak"type="submit">Semak</button>
+    </form>
+
+</body>
+
+</html>

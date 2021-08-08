@@ -1,4 +1,8 @@
 <?php 
+session_start();
+if ($_SESSION['status'] != "guru") {
+    header("Location: login.php");
+    exit;}
 require "functions.php";
 
 // cek bile tekan butang tambah

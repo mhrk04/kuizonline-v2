@@ -2,7 +2,7 @@
 session_start();
 require "functions.php";
 if( $_SESSION["status"] == "guru" ) {
-	header("Location: guru_senarai.php");
+	header("Location: home_guru.php");
 	exit;
 }elseif ($_SESSION["status"] == "pelajar") {
     header("Location: home_pelajar.php");
@@ -41,7 +41,7 @@ if (isset($_POST['userid'])) {
     }
     if ($jumpa == TRUE) {
         if ( $_SESSION["status"] == "guru" ) {
-            header("Location: guru_senarai.php");
+            header("Location: home_guru.php");
         }else {
             header("Location: home_pelajar.php");
         }
