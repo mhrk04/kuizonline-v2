@@ -1,6 +1,6 @@
 <?php 
 // sambung ke database
-$conn = mysqli_connect("localhost","root","root","kuizonline");
+$conn = mysqli_connect("localhost","root","","kuizonline");
 
 //function mengquery database
 function query($query){
