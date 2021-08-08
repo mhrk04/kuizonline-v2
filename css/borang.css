@@ -29,7 +29,7 @@ form {
 /*borang login*/
 form.pendek,
 h3.pendek {
-  width: 30%;
+  width: 20%;
 }
 
 /*borang selain login*/
@@ -41,7 +41,7 @@ h3.panjang {
 input[type="text"],
 input[type="password"],
 select {
-  width: 100%;
+  width: 120%;
   padding: 5px;
   margin: 5px;
 }
