@@ -127,6 +127,38 @@ if (isset($_POST["submit"])) {
             </tr>
         </table>
         </form>
+<?php 
+$IDPelajar = $_POST['IDPelajar'];
+if (isset($_POST['padam'])) {
+    $q = "DELETE FROM kuiz WHERE IDPelajar = '$IDPelajar'";
+    mysqli_query($conn,$q);
+
+if (mysqli_affected_rows($conn) > 0) {
+    echo "
+         <script>
+         alert('Data berjaya dihapus !');
+         document.location.href = 'soalan_senarai.php';
+         </script>";
+}else {
+    echo "
+         <script>
+         alert('Data tidak berjaya dihapus !');
+         document.location.href = 'soalan_senarai.php';
+         </script>";
+    }
+}
+?>
+
+        <h2>Padam Jawapan Pelajar</h2>
+        <form action="" method="POST">
+        <table>
+        <tr>
+            <td> <label for="IDPelajar">ID Pelajar :</label></td>
+            <td><input type="text" name="IDPelajar" id="IDPelajar"></label></td>
+        </tr>
+        </table>
+        <button type="submit" name="padam">Padam</button>
+        </form>
     </center>
     
 </body>
