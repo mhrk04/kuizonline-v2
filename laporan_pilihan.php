@@ -1,5 +1,5 @@
 <?php 
-session_start();
+require "menu_guru.php";
 if ($_SESSION['status'] != "guru") {
     header("Location: login.php");
     exit;}
