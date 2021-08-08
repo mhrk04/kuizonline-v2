@@ -17,8 +17,8 @@ if ($_SESSION['status'] != "pelajar") {
     <ul>
         <li><?= $_SESSION['nama']; ?></li>
         <li><a href="home_pelajar.php">Home</a></li>
-        <li><a href="jawab_mula.php">Mula Kuiz</a></li>
-        <li><a href="laporan_pelajar.php">Laporan</a></li>
+        <li><a href="jawab_soalan.php">Mula Kuiz</a></li>
+        <li><a href="jawab_ulangkaji.php">Laporan</a></li>
         <li><a href="logout.php">Log Keluar</a></li>
     </ul>
 </body>

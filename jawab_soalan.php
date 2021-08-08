@@ -4,6 +4,32 @@ if ($_SESSION['status'] != "pelajar") {
     header("Location: login.php");
     exit;}
 require "functions.php";
+$IDPelajar = $_SESSION['username'];
+
+$sql1 = "SELECT * FROM kuiz WHERE IDPelajar = '$IDPelajar'";
+$data = mysqli_query($conn,$sql1);
+if (mysqli_num_rows($data) > 0) {
+    echo 
+    "<script>
+    alert('Anda telah menjawab kuiz. Maka anda akan dialihkan ke laman laporan.');
+    document.location.href = 'jawab_ulangkaji.php';
+    </script>";
+}
+
+if (isset($_POST['submit'])) {
+        
+    date_default_timezone_set("Asia/Kuala_Lumpur");
+    $Tarikh = date('d/m/Y');
+    $sql = "select * from soalan order by IDSoalan ASC";
+    $data = mysqli_query($conn, $sql);
+    while ($Soalan = mysqli_fetch_array($data)) {
+        $IDSoalan = $Soalan['IDSoalan'];
+        $jawapanpelajar = $_POST[$IDSoalan];
+        $sql = "insert into kuiz values('$IDPelajar','$IDSoalan', '$Tarikh', '$jawapanpelajar',0)";
+        mysqli_query($conn, $sql);
+    }
+    header("Location: jawab_ulangkaji.php");
+}
 
 ?>
 
@@ -20,7 +46,7 @@ require "functions.php";
 </head>
 
 <body>
-    <form action="jawab_semak.php" method="POST">
+    <form action="" method="POST">
         <table>
             <caption>SOALAN KUIZ ONLINE</caption>
             <tr>
@@ -52,7 +78,7 @@ require "functions.php";
             </tr>
             <?php $bil = $bil + 1;} ?>
         </table>
-        <button class="semak"type="submit">Semak</button>
+        <button class="semak" type="submit" name="submit">Semak</button>
     </form>
 
 </body>
