@@ -5,17 +5,15 @@ if ($_SESSION['status'] != "guru") {
     exit;
 }
 ?>
+
+<!-- untuk link menu -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        ul{
-            list-style: none;
-        }
-    </style>
+    <link rel="stylesheet" href="css/menu2.css">
 </head>
 <body>
     <center>
@@ -28,8 +26,8 @@ if ($_SESSION['status'] != "guru") {
             <li><a href="pelajar_insert.php">Menambah Pelajar</a></li>
             <li><a href="guru_insert.php">Menambah Guru</a></li>
             <li><a href="kelas_insert.php">Menambah Kelas</a></li>
-            <li><a href="logout.php">Log Keluar</a></li>
             <li><a href="import.php">Import Data</a></li>
+            <li><a href="logout.php">Log Keluar</a></li>
         </ul>
     </nav>
     </center>
