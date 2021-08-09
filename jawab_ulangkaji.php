@@ -3,7 +3,19 @@ require "menu_pelajar.php";
 if ($_SESSION['status'] != "pelajar") {
     header("Location: login.php");
     exit;}
-    require "functions.php";
+
+require "functions.php";
+$IDPelajar = $_SESSION['username'];
+
+$sql1 = "SELECT * FROM kuiz WHERE IDPelajar = '$IDPelajar'";
+$data = mysqli_query($conn,$sql1);
+if (mysqli_num_rows($data) == 0) {
+    echo 
+    "<script>
+    alert('Anda belum menjawab kuiz. Maka anda akan dialihkan ke laman Mula Kuiz.');
+    document.location.href = 'jawab_soalan.php';
+    </script>";
+}
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +24,7 @@ if ($_SESSION['status'] != "pelajar") {
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="senarai.css">
+  <link rel="stylesheet" href="css/senarai.css">
   <title>Laporan</title>
 </head>
 <body>
@@ -26,7 +38,6 @@ if ($_SESSION['status'] != "pelajar") {
     <?php
       $jumlah = 0;
       $betul = 0;
-      $IDPelajar = $_SESSION['username'];
       $sql = "SELECT * FROM `kuiz` JOIN soalan on kuiz.IDSoalan = soalan.IDSoalan WHERE IDPelajar = '".$IDPelajar."'";
       $data = mysqli_query($conn, $sql);
       $bil = 1;

@@ -1,5 +1,5 @@
 <?php 
-session_start();
+require "menu_pelajar.php";
 if ($_SESSION['status'] != "pelajar") {
     header("Location: login.php");
     exit;}
@@ -41,11 +41,13 @@ if (isset($_POST['submit'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="senarai.css">
-    <link rel="stylesheet" href="button.css">
+    <link rel="stylesheet" href="css/senarai.css">
+    <link rel="stylesheet" href="css/button.css">
 </head>
 
 <body>
+    <center>
+    <div class="kandungan">
     <form action="" method="POST">
         <table>
             <caption>SOALAN KUIZ ONLINE</caption>
@@ -80,7 +82,8 @@ if (isset($_POST['submit'])) {
         </table>
         <button class="semak" type="submit" name="submit">Semak</button>
     </form>
-
+    </div>
+    </center>
 </body>
 
 </html>
