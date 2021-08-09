@@ -4,6 +4,7 @@ if ($_SESSION['status'] != "guru") {
     header("Location: login.php");
     exit;
 }
+$nama = $_SESSION['nama']
 ?>
 
 <!-- untuk link menu -->
@@ -11,13 +12,14 @@ if ($_SESSION['status'] != "guru") {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <link rel="stylesheet" href="css/menu2.css">
 </head>
 <body>
-    <center>
-    <nav>
+    <div class="menu">
+        <h3 class="menu">Menu Utama</h3>
+        <h2 class="nama"><?= $nama; ?></h2>
         <ul>
             <li><a href="home_guru.php">Home</a></li>
             <li><a href="soalan_senarai.php">Soalan Kuiz</a></li>
@@ -29,7 +31,6 @@ if ($_SESSION['status'] != "guru") {
             <li><a href="import.php">Import Data</a></li>
             <li><a href="logout.php">Log Keluar</a></li>
         </ul>
-    </nav>
-    </center>
+    </div>
 </body>
 </html>

@@ -28,6 +28,7 @@ if (mysqli_num_rows($data) == 0) {
   <title>Laporan</title>
 </head>
 <body>
+  <div class="kandungan">
   <table>
     <caption>SKEMA DAN KEPUTUSAN</caption>
     <tr>
@@ -98,6 +99,8 @@ $data = mysqli_query($conn, $sql);
     <td class="keputusan"><?php echo number_format($Peratus,0); ?> % </td>
   </tr>
 </table>
+</div>
 </body>
+
 
 </html>
