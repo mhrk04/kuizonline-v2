@@ -1,4 +1,5 @@
 <?php
+require "header.php";
 require "menu_pelajar.php";
 if ($_SESSION['status'] != "pelajar") {
     header("Location: login.php");

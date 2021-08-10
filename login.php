@@ -74,7 +74,7 @@ if (isset($_POST['userid'])) {
         <table >
             <tr>
                 <!-- <td><label for="userid">User ID</label></td> -->
-                <td> <input type="text" id="userid" name="userid" placeholder="idpengguna"></td>
+                <td> <input type="text" id="userid" name="userid" placeholder="IDPengguna"></td>
             </tr>
             <tr>
                 <!-- <td><label for="KataLaluan">KataLaluan</label></td> -->

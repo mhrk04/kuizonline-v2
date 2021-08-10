@@ -3,12 +3,10 @@ ul {
   list-style: none;
   width: 145px;
   margin-left: 10px;
-  padding: 0%;
+  padding: 0px;
   position: absolute;
   display: block;
   box-shadow: 10px 10px 5px rgba(96, 96, 96, 0.8);
-  border-radius: 1.2rem;
-  background: rgb(57, 178, 187);
 
 }
 
@@ -17,7 +15,6 @@ ul li {
   background: rgb(61, 130, 233);
   position: relative;
   display: block;
-  border-radius: 1.2rem;
 }
 
 ul li a {
@@ -27,7 +24,7 @@ ul li a {
   text-align: left;
   color: white;
   text-decoration: none;
-  padding: 10px 10px;
+  padding: 10px 20px;
   display: block;
 }
 
@@ -41,13 +38,12 @@ body {
 
 div.all {
   width: 700px;
-  height: 550px;
+  height: 650px;
   margin: 30px auto;
   border-radius: 15px;
   border: 2px solid lightblue;
   background-color: rgb(87, 121, 172);
   box-shadow: 15px 15px 6px rgba(96, 96, 96, 0.7);
-  z-index: 6;
 }
 
 h3.menu {
@@ -80,7 +76,7 @@ div.header {
   height: 50px;
   border-radius: 10px 10px 0 0;
   background-color: turquoise;
-  margin: 0;
+  float: left;
 }
 
 div.menu {
@@ -90,7 +86,7 @@ div.menu {
   border: none;
   border-radius: 0 0 0 15px;
   width: 170px;
-  height: 510px;
+  height: 600px;
   background-color: teal;
   z-index: 5;
 }
@@ -99,10 +95,10 @@ div.kandungan {
   overflow: auto;
   float: left;
   position: relative;
-  border: solid 1px black;
+  border: none;
   border-radius: 0 0 10px 0;
   width: 530px;
-  height: 500px;
+  height: 600px;
   z-index: 1;
   background-color: cadetblue;
 }

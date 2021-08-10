@@ -1,11 +1,11 @@
 <?php 
-require "menu_guru.php";
 include "header.php";
+require "menu_guru.php";
 if ($_SESSION['status'] != "guru") {
     header("Location: login.php");
     exit;
 }
-
+$nama = $_SESSION['nama'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,8 +17,24 @@ if ($_SESSION['status'] != "guru") {
     <title>Home Guru</title>
 </head>
 <body>
-    <div class="kandungan">
-    <h1>Selamat Datang ke Kuiz santai sejarah</h1>
+    <!-- <div class="all">
+        <div class="header"></div>
+<div class="menu">
+        <h3 class="menu">Menu Utama</h3>
+        <h2 class="nama"><?= $nama; ?></h2>
+        <ul>
+            <li><a href="home_guru.php">Home</a></li>
+            <li><a href="soalan_senarai.php">Soalan Kuiz</a></li>
+            <li><a href="laporan_pilihan.php">Laporan Prestasi</a></li>
+            <li><a href="guru_senarai.php">Senarai Guru & Pelajar</a></li>
+            <li><a href="pelajar_insert.php">Menambah Pelajar</a></li>
+            <li><a href="guru_insert.php">Menambah Guru</a></li>
+            <li><a href="kelas_insert.php">Menambah Kelas</a></li>
+            <li><a href="import.php">Import Data</a></li>
+            <li><a href="logout.php">Log Keluar</a></li>
+        </ul>
     </div>
+    <div class="kandungan">
+    </div> -->
 </body>
 </html>

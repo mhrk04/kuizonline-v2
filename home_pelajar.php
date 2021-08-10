@@ -1,4 +1,5 @@
 <?php 
+//tamabah header
 require "header.php";
 require "menu_pelajar.php";
     
@@ -16,11 +17,6 @@ if ($_SESSION['status'] != "pelajar") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <title>Home</title>
     <link rel="stylesheet" href="css/menu2.css">
-    <style>
-        body{
-            background-color: burlywood;
-        }
-    </style>
 </head>
 <body>
     <div class="kandungan">

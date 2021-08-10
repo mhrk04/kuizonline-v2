@@ -1,4 +1,5 @@
 <?php 
+require "header.php";
 require "menu_guru.php";
 if ($_SESSION['status'] != "guru") {
     header("Location: login.php");
@@ -40,10 +41,13 @@ if (isset($_POST["submit"])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/borang.css">
+    <link rel="stylesheet" href="css/senarai.css">
     <title>Senarai Soalan</title>
     
 </head>
 <body>
+    <div class="kandungan">
     <center>
         <h2>Soalan</h2>
         <table border="1" cellspacing="0" cellpadding="5">
@@ -81,8 +85,8 @@ if (isset($_POST["submit"])) {
         </table>
 <br>
 
-        <h2>Tambah Soalan</h2>
-        <form action="" method="post">
+        <h3 class="panjang">Tambah Soalan</h3>
+        <form class="panjang" action="" method="post">
         <table>
             <tr>
                 <td><label for="IDSoalan">ID Soalan:</label></td>
@@ -117,10 +121,9 @@ if (isset($_POST["submit"])) {
                 <td><label for="IDGuru">ID Guru:</label></td>
                 <td><input type="text" name="IDGuru" id="IDGuru"></td>
             </tr>
-            <tr>
-                <td><button type="submit" name="submit">Tambah</button></td>
-            </tr>
-        </table>
+            </table>
+               <button type="submit" name="submit">Tambah</button>
+       
         </form>
 <?php 
 
@@ -145,8 +148,8 @@ if (mysqli_affected_rows($conn) > 0) {
 }
 ?>
 
-        <h2>Padam Jawapan Pelajar</h2>
-        <form action="" method="POST">
+        <h3 class="panjang">Padam Jawapan Pelajar</h3>
+        <form class="panjang" action="" method="POST">
         <table>
         <tr>
             <td> <label for="IDPelajar">ID Pelajar :</label></td>
@@ -156,7 +159,7 @@ if (mysqli_affected_rows($conn) > 0) {
         <button type="submit" name="padam">Padam</button>
         </form>
     </center>
-    
+    </div>
 </body>
 </html>
 
