@@ -47,8 +47,9 @@ if (isset($_POST["submit"])) {
     <link rel="stylesheet" href="css/borang.css">
 </head>
 <body>
-    <h3 class="pendek">Kemaskini Data Pelajar</h3>
-    <form class="pendek" action="" method="post">
+    <div class="kandungan">
+    <h3 class="panjang">Kemaskini Data Pelajar</h3>
+    <form class="panjang" action="" method="post">
         <table>
             <tr>
                 
@@ -75,5 +76,6 @@ if (isset($_POST["submit"])) {
         </table>
     </form>
     <a href="guru_senarai.php">Kembali ke Senarai Nama</a>
+    </div>
 </body>
 </html>

@@ -6,7 +6,7 @@ h3 {
   color: white;
   padding: 5px 22px;
   border-radius: 10px 10px 0 0;
-  margin: 20px auto 0px;
+  /* margin: 20px auto 0px; */
   background-color: rgba(0, 15, 160, 1.00);
 }
 
@@ -31,11 +31,15 @@ h3.pendek {
   width: 250px;
 }
 
+h3.pendek {
+  margin-top: 50%;
+}
+
 /*borang selain login*/
 form.panjang,
 h3.panjang {
   width: 330px;
-  margin: 40px auto;
+  margin: 0px auto;
 }
 
 input[type="text"],

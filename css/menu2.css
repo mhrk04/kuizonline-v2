@@ -100,5 +100,6 @@ div.kandungan {
   width: 530px;
   height: 600px;
   z-index: 1;
-  background-color: cadetblue;
+  background-color: rgb(61, 233, 127);
+  padding: auto;
 }

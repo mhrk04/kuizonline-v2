@@ -1,11 +1,13 @@
 <?php 
 require "header.php";
 require "menu_guru.php";
-
+//session
 if ($_SESSION['status'] != "guru") {
     header("Location: login.php");
     exit;}
+
 require "functions.php";
+
 if (isset($_POST['submit'])) {
     $namajadual = $_POST['namatable'];
     $namafail = $_FILES['namafail']['tmp_name'];
@@ -77,7 +79,8 @@ if ($berjaya === true) {
     <title>Import data</title>
   </head>
   <body>
-    <h3 class="pendek">Import Data</h3>
+    <div class="kandungan">
+    <h3 class="pendek" style="margin-bottom: 0px;">Import Data</h3>
     <form class="pendek" action="" method="POST" enctype="multipart/form-data">
       <table>
         <tr>
@@ -100,5 +103,8 @@ if ($berjaya === true) {
         </tr>
       </table>
     </form>
+    </div>
+    <br>
+    <?php include "footer.php"; ?>
   </body>
 </html>

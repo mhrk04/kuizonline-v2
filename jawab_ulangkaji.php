@@ -64,7 +64,7 @@ if (mysqli_num_rows($data) == 0) {
         $betul = $betul + 1;
       }
       else
-        echo "<img src='img/salah.png' alt='Betul'>";
+        echo "<img src='img/salah.png' alt='Salah'>";
         ?>
   </td>
 </tr>

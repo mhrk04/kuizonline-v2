@@ -25,6 +25,7 @@ $pelajar = query("SELECT * FROM pelajar");
     </style>
 </head>
 <body>
+    <div class="kandungan">
     <center>
         <br>
     <h3>Senarai Guru</h3>
@@ -82,5 +83,6 @@ $pelajar = query("SELECT * FROM pelajar");
         <?php endforeach; ?>
     </table>
     </center>
+    </div>
 </body>
 </html>
