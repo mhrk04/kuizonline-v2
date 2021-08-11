@@ -1,5 +1,6 @@
 <?php 
-session_start();
+require "header.php";
+require "menu_guru.php";
 if ($_SESSION['status'] != "guru") {
     header("Location: login.php");
     exit;}
@@ -43,7 +44,7 @@ if (isset($_POST["submit"])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kemaskini Data Kelas</title>
-    <!-- <link rel="stylesheet" href="borang.css"> -->
+    <link rel="stylesheet" href="css/borang.css">
 </head>
 <body>
     <h3>Kemaskini Data Kelas</h3>

@@ -1,4 +1,5 @@
 <?php 
+require "header.php";
 require "menu_guru.php";
 
 if ($_SESSION['status'] != "guru") {
@@ -72,14 +73,12 @@ if ($berjaya === true) {
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/borang.css">
     <title>Import data</title>
   </head>
   <body>
-    <h3>Import Data</h3><br>
-    <h2>test nom2
-    </h2>
-    <h3>pastikan data yang diamsukkan mengikut kriterian yang ditetapkan seperti id pelajar hanay 4 aksara sahaja</h3>
-    <form action="" method="POST" enctype="multipart/form-data">
+    <h3 class="pendek">Import Data</h3>
+    <form class="pendek" action="" method="POST" enctype="multipart/form-data">
       <table>
         <tr>
           <td>Jadual</td>

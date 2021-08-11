@@ -1,4 +1,5 @@
 <?php 
+require "header.php";
 require "menu_guru.php";
 if ($_SESSION['status'] != "guru") {
     header("Location: login.php");
@@ -39,13 +40,14 @@ if (isset($_POST["submit"])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tambah Kelas</title>
-    <link rel="stylesheet" href="borang.css">
+    <link rel="stylesheet" href="css/borang.css">
     <link rel="stylesheet" href="button.css">
+    <link rel="stylesheet" href="css/senarai.css">
 </head>
 
 <body>
    
-    <h2>Senarai Kelas</h2>
+    <caption>Senarai Kelas</caption>
     <br><br>
     <table border="1" cellpadding="10" cellspacing="0">
         <tr>
@@ -69,8 +71,8 @@ if (isset($_POST["submit"])) {
         <?php endforeach; ?>
     </table>
 
-    <h2>Tambah kelas</h2>
-    <form  action="" method="post">
+    <h3 class="panjang">Tambah kelas</h3>
+    <form class="panjang"  action="" method="post">
         <table>
             <tr>
                 <td><label for="IDKelas"> ID kelas</label></td>

@@ -1,4 +1,5 @@
 <?php
+require "header.php";
 require "menu_guru.php";
 if ($_SESSION['status'] != "guru") {
     header("Location: login.php");
@@ -16,6 +17,7 @@ $pelajar = query("SELECT * FROM pelajar");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Senarai Guru</title>
+    <link rel="stylesheet" href="css/senarai.css">
     <style>
         ul{
             list-style:none ;
@@ -24,8 +26,9 @@ $pelajar = query("SELECT * FROM pelajar");
 </head>
 <body>
     <center>
+        <br>
     <h3>Senarai Guru</h3>
-    <br><br>
+    <br>
     <table border="1" cellpadding="10" cellspacing="0">
         <tr>
             <th>Bil.</th>

@@ -1,5 +1,6 @@
 <?php 
-session_start();
+require "header.php";
+require "menu_guru.php";
 if ($_SESSION['status'] != "guru") {
     header("Location: login.php");
     exit;}
@@ -38,11 +39,12 @@ if (isset($_POST["submit"])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kemaskini Data Guru</title>
+    <link rel="stylesheet" href="css/borang.css">
 </head>
 <body>
     <center>
-        <h2>Kemaskini Data Guru</h2>
-        <form action="" method="post">
+        <h3 class="pendek">Kemaskini Data Guru</h3>
+        <form class="pendek" action="" method="post">
         <table>
             <tr>
                 <td><label for="IDGuru">ID Guru:</label></td>
