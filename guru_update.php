@@ -45,10 +45,11 @@ if (isset($_POST["submit"])) {
     <center>
         <h3 class="pendek">Kemaskini Data Guru</h3>
         <form class="pendek" action="" method="post">
+        <input type="hidden" name="IDGuru" id="IDGuru" value="<?= $guru['IDGuru']; ?>">
+
         <table>
             <tr>
-                <td><label for="IDGuru">ID Guru:</label></td>
-                <td><input type="text" name="IDGuru" id="IDGuru" value="<?= $guru['IDGuru']; ?>"></td>
+                <td>ID Guru: </td><td><?= $guru['IDGuru']; ?></td>
             </tr>
             <tr>
             <td><label for="Nama_Guru">Nama Guru:</label></td>
