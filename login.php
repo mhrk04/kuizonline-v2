@@ -1,4 +1,5 @@
 <?php 
+//mula cek session
 session_start();
 require "functions.php";
 if( isset($_SESSION['guru']) ) {
@@ -8,7 +9,10 @@ if( isset($_SESSION['guru']) ) {
     header("Location: home_pelajar.php");
 	exit;
 }
+//tamat cek session
 
+
+//semak user
 if (isset($_POST['userid'])) {
     $userid = $_POST['userid'];
     $KataLaluan = $_POST['KataLaluan'];
@@ -63,9 +67,9 @@ if (isset($_POST['userid'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/borang.css">
     <link rel="stylesheet" href="css/button.css">
-  
+    <link rel="stylesheet" href="css/borang.css">
+
     <title>Login</title>
 </head>
 <body><center>
@@ -85,4 +89,8 @@ if (isset($_POST['userid'])) {
         <button type="button" onclick="window.location='signup.php'">Sign Up</button>
     </form></center>
 </body>
+<footer>
+<?php 
+include "footer.php";
+?></footer>
 </html>
