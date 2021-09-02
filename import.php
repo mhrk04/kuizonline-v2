@@ -65,7 +65,7 @@ if ($berjaya === true) {
 
 }
 
-
+include "css/borang.php";
 
 ?>
 
@@ -75,12 +75,11 @@ if ($berjaya === true) {
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/borang.css">
     <title>Import data</title>
   </head>
   <body>
     <div class="kandungan">
-    <h3 class="pendek" style="margin-bottom: 0px;">Import Data</h3>
+    <h3 class="pendek" >Import Data</h3>
     <form class="pendek" action="" method="POST" enctype="multipart/form-data">
       <table>
         <tr>

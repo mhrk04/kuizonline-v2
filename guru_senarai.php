@@ -35,7 +35,7 @@ $pelajar = query("SELECT * FROM pelajar");
             <th>Bil.</th>
             <th>ID Guru</th>
             <th>Nama Guru</th>
-            <th>Kata Laluan</th>
+            <!-- <th>Kata Laluan</th> -->
             <th>Aksi</th>
         </tr>
         <?php $i = 1; ?>
@@ -44,7 +44,7 @@ $pelajar = query("SELECT * FROM pelajar");
             <td><?= $i; ?></td>
             <td><?= $row["IDGuru"]; ?></td>
             <td><?= $row["Nama_Guru"]; ?></td>
-            <td><?= $row["KataLaluan"]; ?></td>            
+            <!-- <td> //$row["KataLaluan"]; </td>             -->
             <td>
                 <a href="guru_update.php?id=<?= $row['IDGuru']; ?>">Ubah</a> |
                 <a href="hapus.php?id=<?= $row['IDGuru']; ?>&table=guru&fill=IDGuru" onclick="return confirm('Yakin hendak dipadam');">Padam</a>

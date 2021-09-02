@@ -47,8 +47,8 @@ if (isset($_POST["submit"])) {
 
 <body>
    
-    <caption>Senarai Kelas</caption>
-    <br><br>
+    <h2>Senarai Kelas</h2>
+    <br>
     <table border="1" cellpadding="10" cellspacing="0">
         <tr>
             <th>Bil.</th>
@@ -70,7 +70,7 @@ if (isset($_POST["submit"])) {
         <?php $i++; ?>
         <?php endforeach; ?>
     </table>
-
+<br>
     <h3 class="panjang">Tambah kelas</h3>
     <form class="panjang"  action="" method="post">
         <table>

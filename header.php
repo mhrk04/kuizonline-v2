@@ -1,3 +1,4 @@
+<?php include "css/menu.php"; ?>
 <div class="all">
 
 <style>

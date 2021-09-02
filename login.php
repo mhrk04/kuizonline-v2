@@ -10,8 +10,8 @@ if( isset($_SESSION['guru']) ) {
 	exit;
 }
 //tamat cek session
-
-
+//css dimasukkan ke php
+require "css/borang.php";
 //semak user
 if (isset($_POST['userid'])) {
     $userid = $_POST['userid'];
@@ -68,7 +68,7 @@ if (isset($_POST['userid'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/button.css">
-    <link rel="stylesheet" href="css/borang.css">
+    <!-- <link rel="stylesheet" href="css/borang.css"> -->
 
     <title>Login</title>
 </head>

@@ -1,10 +1,12 @@
 <?php 
 session_start();
+//cek guru or not
 if ($_SESSION['status'] != "guru") {
     header("Location: login.php");
     exit;
 }
-$nama = $_SESSION['nama']
+$nama = $_SESSION['nama'];
+include "css/menu.php";
 ?>
 
 <!-- untuk link menu -->
@@ -12,10 +14,8 @@ $nama = $_SESSION['nama']
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-    <link rel="stylesheet" href="css/menu2.css">
-    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
     <div class="menu">
