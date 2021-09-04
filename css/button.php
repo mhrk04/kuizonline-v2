@@ -17,11 +17,11 @@
   }
 
   button.login {
-    background-image: url(/img/signin.png);
+    background: url('css/img/signin.png') no-repeat;
   }
 
   button.signup {
-    background-image: url(/img/signup.png);
+    background: url('css/img/signup.png') no-repeat;
   }
 
   button.tambah {
@@ -33,7 +33,7 @@
   }
 
   button.padam {
-    background-image: url(/img/delete.png);
+    background: url('css/img/delet.png')no-repeat;
   }
 
   button.update {

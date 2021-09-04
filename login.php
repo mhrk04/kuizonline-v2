@@ -66,9 +66,7 @@ if (isset($_POST['userid'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/button.css">
     <link rel="shortcut icon" href="css/img/mylogo.jpg" type="image/x-icon">
-
     <title>Login</title>
 </head>
 
@@ -79,15 +77,15 @@ if (isset($_POST['userid'])) {
             <table>
                 <tr>
                     <!-- <td><label for="userid">User ID</label></td> -->
-                    <td> <input type="text" id="userid" name="userid" placeholder="IDPengguna"></td>
+                    <td><img src="css/img/user.png" alt="user"> <input type="text" id="userid" name="userid" placeholder="IDPengguna"></td>
                 </tr>
                 <tr>
                     <!-- <td><label for="KataLaluan">KataLaluan</label></td> -->
-                    <td><input type="password" name="KataLaluan" placeholder="KataLaluan" id="KataLaluan"></td>
+                    <td><img src="css/img/lock.png" alt=""> <input type="password" name="KataLaluan" placeholder="KataLaluan" id="KataLaluan"></td>
                 </tr>
             </table>
-            <button type="submit" name="login">Login</button>
-            <button type="button" onclick="window.location='signup.php'">Sign Up</button>
+            <button type="submit" class="login" name="login">Login</button>
+            <button type="button" class="signup" onclick="window.location='signup.php'">Sign Up</button>
         </form>
     </center>
 </body>
