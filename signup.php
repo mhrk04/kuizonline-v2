@@ -31,26 +31,26 @@ if (isset($_POST["signup"])) {
         <form class="panjang" action="" method="post">
             <table>
                 <tr>
-                    <td><label for="IDPelajar">ID Pelajar :</label></td>
+                    <td><label for="IDPelajar">ID Pelajar </label></td>
                     <td><input type="text" name="IDPelajar" id="IDPelajar" placeholder="Max 4 char" required></td>
                 </tr>
                 <tr>
-                    <td><label for="Nama_Pelajar">Nama :</label></td>
+                    <td><label for="Nama_Pelajar">Nama </label></td>
                     <td><input type="text" name="Nama_Pelajar" id="Nama_Pelajar" required></td>
                 </tr>
                 <tr>
-                    <td><label for="IDKelas">Kelas</label></td>
+                    <td><label for="IDKelas">Kelas </label></td>
                     <td><select id="IDKelas" required name="IDKelas">
                             <?php kelaslist(); ?>
                         </select>
                     </td>
                 </tr>
                 <tr>
-                    <td><label for="KataLaluan">KataLaluan :</label></td>
+                    <td><label for="KataLaluan">KataLaluan </label></td>
                     <td><input type="password" name="KataLaluan" id="KataLaluan" placeholder="max 8 char" required></td>
                 </tr>
                 <tr>
-                    <td><label for="KataLaluan2">Pengesahan KataLaluan :</label></td>
+                    <td><label for="KataLaluan2">Pengesahan KataLaluan </label></td>
                     <td><input type="password" name="KataLaluan2" id="KataLaluan2" placeholder="max 8 char" required></td>
                 </tr>
             </table>

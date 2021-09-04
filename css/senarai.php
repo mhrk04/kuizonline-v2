@@ -27,7 +27,7 @@
   td {
     padding: 8px;
     border: 2px solid;
-
+    font-size: medium;
   }
 
   td.bil {

@@ -68,10 +68,17 @@ if (isset($_POST['userid'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="css/img/mylogo.jpg" type="image/x-icon">
     <title>Login</title>
+    <style>
+        h1 {
+            font-size: 40px;
+            text-decoration: teal;
+        }
+    </style>
 </head>
 
 <body>
     <center>
+        <h1>Selamat Datang ke Laman Kuiz Santai Sejarah</h1>
         <h3 class="pendek">Halaman Login</h3>
         <form action="" method="post" class="pendek">
             <table>

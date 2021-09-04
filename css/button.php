@@ -70,7 +70,9 @@
   }
 
   button.semak {
-    background-image: url(/img/betul.png);
+    background: url(css/img/betul.png) no-repeat;
+    color: white;
+    border: 1px solid black
   }
 
   button:hover {

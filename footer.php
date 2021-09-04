@@ -7,6 +7,7 @@
         background-color: red;
         color: white;
         text-align: center;
+        z-index: 6;
     }
 </style>
 <center>
