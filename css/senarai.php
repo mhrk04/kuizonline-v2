@@ -1,12 +1,12 @@
 <style>
-  table {
+  table.list {
     font-family: verdana;
     font-size: 12px;
     font-weight: normal;
     text-align: center;
 
     width: 500px;
-    margin: 0px;
+    margin: auto;
     border-collapse: collapse;
   }
 
@@ -48,18 +48,22 @@
     width: 250px;
   }
 
-  tr:nth-child(odd) {
+  tr.list {
     background-color: rgb(187, 233, 248);
   }
 
-  tr:nth-child(even) {
+  /* tr:nth-child(even) {
     background-color: rgb(187, 233, 248);
-  }
+  } */
 
   tr.senguru {
     background-color: rgb(187, 233, 248);
     font-weight: bold;
     color: white;
 
+  }
+
+  td.tak {
+    border: none;
   }
 </style>

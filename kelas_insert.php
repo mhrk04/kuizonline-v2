@@ -1,10 +1,14 @@
-<?php 
+<?php
 require "header.php";
 require "menu_guru.php";
 if ($_SESSION['status'] != "guru") {
     header("Location: login.php");
-    exit;}
+    exit;
+}
 require "functions.php";
+include "css/senarai.php";
+include "css/button.php";
+include "css/borang.php";
 $kelas = query("SELECT * FROM kelas");
 
 //cek bile tekan tambah
@@ -18,7 +22,7 @@ if (isset($_POST["submit"])) {
         </script>
         
         ";
-    }else{
+    } else {
         echo "
         <script>
         alert('data tidak berjaya ditambah');
@@ -27,7 +31,6 @@ if (isset($_POST["submit"])) {
         
         ";
     }
-
 }
 ?>
 
@@ -40,52 +43,53 @@ if (isset($_POST["submit"])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tambah Kelas</title>
-    <link rel="stylesheet" href="css/borang.css">
-    <link rel="stylesheet" href="button.css">
-    <link rel="stylesheet" href="css/senarai.css">
 </head>
 
 <body>
-   
-    <h2>Senarai Kelas</h2>
-    <br>
-    <table border="1" cellpadding="10" cellspacing="0">
-        <tr>
-            <th>Bil.</th>
-            <th>ID Kelas</th>
-            <th>Nama Kelas</th>
-            <th>Aksi</th>
-        </tr>
-        <?php $i = 1; ?>
-        <?php foreach ($kelas as $row) :?>
-        <tr>
-            <td><?= $i; ?></td>
-            <td><?= $row["IDKelas"]; ?></td>
-            <td><?= $row["Nama_Kelas"]; ?></td>
-            <td>
-                <a href="kelas_update.php?IDKelas=<?= $row['IDKelas']; ?>">Ubah</a> |
-                <a href="hapus.php?id=<?= $row['IDKelas']; ?>&table=kelas&fill=IDKelas" onclick="return confirm('Yakin hendak dipadam');">Padam</a>
-            </td>
-        </tr>
-        <?php $i++; ?>
-        <?php endforeach; ?>
-    </table>
-<br>
-    <h3 class="panjang">Tambah kelas</h3>
-    <form class="panjang"  action="" method="post">
-        <table>
-            <tr>
-                <td><label for="IDKelas"> ID kelas</label></td>
-                <td> <input type="text" name="IDKelas" id="IDKelas" placeholder="max 3 char"></td>
-            </tr>
-            <tr>
-                <td> Nama kelas</td>
-                <td> <input type="text" name="Nama_Kelas"></td>
-            </tr>
+    <div class="all">
+        <div class="kandungan">
+            <h2>Senarai Kelas</h2>
+            <br>
+            <table class="list">
+                <tr class="list">
+                    <th class="bil">Bil.</th>
+                    <th>ID Kelas</th>
+                    <th>Nama Kelas</th>
+                    <th>Aksi</th>
+                </tr>
+                <?php $i = 1; ?>
+                <?php foreach ($kelas as $row) : ?>
+                    <tr class="list">
+                        <td><?= $i; ?></td>
+                        <td><?= $row["IDKelas"]; ?></td>
+                        <td><?= $row["Nama_Kelas"]; ?></td>
+                        <td>
+                            <a href="kelas_update.php?IDKelas=<?= $row['IDKelas']; ?>">Ubah</a> |
+                            <a href="hapus.php?id=<?= $row['IDKelas']; ?>&table=kelas&fill=IDKelas" onclick="return confirm('Yakin hendak dipadam');">Padam</a>
+                        </td>
+                    </tr>
+                    <?php $i++; ?>
+                <?php endforeach; ?>
+            </table>
+            <br>
+            <!-- ini batas untuk form tambah kelas -->
+            <h3 class="pendek">Tambah kelas</h3>
+            <form class="pendek" action="" method="post">
+                <table style="border: none; margin:auto;">
+                    <tr>
+                        <td class="tak"><label for="IDKelas"> ID kelas</label></td>
+                        <td class="tak"> <input type="text" name="IDKelas" id="IDKelas" placeholder="max 3 char"></td>
+                    </tr>
+                    <tr>
+                        <td class="tak"> Nama kelas</td>
+                        <td class="tak"> <input type="text" name="Nama_Kelas"></td>
+                    </tr>
 
-        </table>
-        <button class="tambah" type="submit" name="submit">Tambah</button>
-    </form>
+                </table>
+                <button class="tambah" type="submit" name="submit">Tambah</button>
+            </form>
+        </div>
+    </div>
 </body>
 
 </html>
