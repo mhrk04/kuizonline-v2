@@ -33,9 +33,9 @@
     background-color: tomato;
   }
 
-  body {
+  /* body {
     /* background-color: black; */
-  }
+
 
   div.all {
     width: 700px;
