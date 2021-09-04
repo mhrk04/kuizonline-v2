@@ -1,6 +1,6 @@
 <?php 
 // sambung ke database
-$conn = mysqli_connect("localhost","root","","kuizonline");
+$conn = mysqli_connect("localhost","root","12345678","kuizonline");
 
 //function mengquery database
 function query($query){
@@ -252,5 +252,3 @@ function registrasi($data){
 function laporan(){
     
 }
-
-?>
