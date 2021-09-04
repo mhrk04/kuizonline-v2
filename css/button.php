@@ -1,4 +1,5 @@
-button {
+<style>
+  button {
     font-family: Verdana;
     font-weight: bold;
     font-size: 11px;
@@ -13,66 +14,67 @@ button {
     background-color: antiquewhite;
     background-position: 8px;
     background-repeat: no-repeat;
-}
+  }
 
-button.login {
+  button.login {
     background-image: url(/img/signin.png);
-}
+  }
 
-button.signup {
+  button.signup {
     background-image: url(/img/signup.png);
-}
+  }
 
-button.tambah {
+  button.tambah {
     background-image: url(/img/add.png);
-}
+  }
 
-button.simpan {
+  button.simpan {
     background-image: url(/img/save.png);
-}
+  }
 
-button.padam {
+  button.padam {
     background-image: url(/img/delete.png);
-}
+  }
 
-button.update {
+  button.update {
     background-image: url(/img/update.png);
-}
+  }
 
-button.merah {
+  button.merah {
     background-image: url(/img/red.png);
-}
+  }
 
-button.biru {
+  button.biru {
     background-image: url(/img/blue.png);
-}
+  }
 
-button.hijau {
+  button.hijau {
     background-image: url(/img/green.png);
-}
+  }
 
-button.hitam {
+  button.hitam {
     background-image: url(/img/black.png);
-}
+  }
 
-button.import {
+  button.import {
     background-image: url(/img/import.png);
-}
+  }
 
-button.cetak {
+  button.cetak {
     background-image: url(/img/printer.png);
     margin-left: 10px;
-}
+  }
 
-button.papar {
+  button.papar {
     background-image: url(/img/monitor.png);
-}
+  }
 
-button.semak {
+  button.semak {
     background-image: url(/img/betul.png);
-}
+  }
 
-button.hover {
+  button:hover {
     background-color: silver;
     cursor: pointer;
-}
+  }
+</style>
