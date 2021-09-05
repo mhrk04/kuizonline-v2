@@ -4,7 +4,7 @@
     font-weight: bold;
     font-size: 11px;
     text-align: left;
-    color: darkolivegreen;
+    color: black;
 
     width: 90px;
     padding: 7px 8px 7px 32px;
@@ -66,7 +66,7 @@
   }
 
   button.cetak {
-    background-image: url(/img/printer.png);
+    background: url(css/img/printer.png) no-repeat;
     margin-left: 10px;
   }
 
