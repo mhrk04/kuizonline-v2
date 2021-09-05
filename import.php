@@ -61,7 +61,7 @@ if (isset($_POST['submit'])) {
         document.location.href = 'import.php';
         </script>";
   }
-  if (mysqli_affected_rows($conn) < 1) {
+  if (mysqli_affected_rows($conn) == 0) {
     echo "
         <script>
         alert('data tidak berjaya ditambah');

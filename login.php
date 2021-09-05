@@ -67,7 +67,7 @@ if (isset($_POST['userid'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="css/img/mylogo.jpg" type="image/x-icon">
-    <title>Login</title>
+    <title>Login | Kuiz Santai Sejarah</title>
     <style>
         h1 {
             font-size: 40px;
