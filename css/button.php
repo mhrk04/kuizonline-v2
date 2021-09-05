@@ -11,7 +11,7 @@
     border: 1px solid darkolivegreen;
     border-radius: 7px;
     margin-top: 10px;
-    background-color: antiquewhite;
+    background-color: burlywood;
     background-position: 8px;
     background-repeat: no-repeat;
   }
@@ -25,7 +25,7 @@
   }
 
   button.tambah {
-    background-image: url(/img/add.png);
+    background: url('css/img/add.png')no-repeat;
   }
 
   button.simpan {
@@ -36,8 +36,13 @@
     background: url('css/img/delet.png')no-repeat;
   }
 
+  button.padam:hover {
+    background-color: crimson;
+  }
+
   button.update {
-    background-image: url(/img/update.png);
+    background: url(css/img/update.png) no-repeat;
+    width: 99px;
   }
 
   button.merah {
@@ -66,7 +71,7 @@
   }
 
   button.papar {
-    background-image: url(/img/monitor.png);
+    background: url(css/img/monitor.png) no-repeat;
   }
 
   button.semak {

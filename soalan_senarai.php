@@ -6,6 +6,9 @@ if ($_SESSION['status'] != "guru") {
     exit;
 }
 require "functions.php";
+include "footer.php";
+include "css/senarai.php";
+include "css/button.php";
 $soalan = query("SELECT * FROM soalan");
 
 
@@ -42,7 +45,6 @@ if (isset($_POST["submit"])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/senarai.css">
     <title>Senarai Soalan</title>
 
 </head>
@@ -51,9 +53,9 @@ if (isset($_POST["submit"])) {
     <div class="kandungan">
         <center>
             <h2>Soalan</h2>
-            <table border="1" cellspacing="0" cellpadding="5">
+            <table class="list">
                 <tr>
-                    <th>Bil.</th>
+                    <th class="bil">Bil.</th>
                     <th>ID Soalan</th>
                     <th>Soalan</th>
                     <th>Pilihan A</th>
@@ -65,7 +67,7 @@ if (isset($_POST["submit"])) {
                 </tr>
                 <?php $i = 1; ?>
                 <?php foreach ($soalan as $row) : ?>
-                    <tr>
+                    <tr class="list">
                         <td><?= $i; ?></td>
                         <td><?= $row["IDSoalan"]; ?></td>
                         <td><?= $row["Nama_Soalan"]; ?></td>
@@ -85,33 +87,34 @@ if (isset($_POST["submit"])) {
                 <?php endforeach; ?>
             </table>
             <br>
+            <!-- batas tambah soalah -->
             <?php include "css/borang.php";  ?>
             <h3 class="panjang">Tambah Soalan</h3>
             <form class="panjang" action="" method="post">
                 <table>
                     <tr>
-                        <td><label for="IDSoalan">ID Soalan:</label></td>
-                        <td><input type="text" name="IDSoalan" id="IDSoalan" placeholder="Max Char 4"></td>
+                        <td class="tak"><label for="IDSoalan">ID Soalan</label></td>
+                        <td class="tak"><input type="text" name="IDSoalan" id="IDSoalan" placeholder="Max Char 4"></td>
                     </tr>
                     <tr>
-                        <td><label for="Nama_Soalan">Soalan:</label></td>
-                        <td><textarea type="text" name="Nama_Soalan" id="Nama_Soalan"></textarea></td>
+                        <td class="tak"><label for="Nama_Soalan">Soalan</label></td>
+                        <td class="tak"><textarea type="text" name="Nama_Soalan" id="Nama_Soalan"></textarea></td>
                     </tr>
                     <tr>
-                        <td><label for="Pilihan_A">Pilihan A:</label></td>
-                        <td><textarea type="text" name="Pilihan_A" id="Pilihan_A"></textarea></td>
+                        <td class="tak"><label for="Pilihan_A">Pilihan A</label></td>
+                        <td class="tak"><textarea type="text" name="Pilihan_A" id="Pilihan_A"></textarea></td>
                     </tr>
                     <tr>
-                        <td><label for="Pilihan_B">Pilihan B:</label></td>
-                        <td><textarea type="text" name="Pilihan_B" id="Pilihan_B"></textarea></td>
+                        <td class="tak"><label for="Pilihan_B">Pilihan B</label></td>
+                        <td class="tak"><textarea type="text" name="Pilihan_B" id="Pilihan_B"></textarea></td>
                     </tr>
                     <tr>
-                        <td><label for="Pilihan_C">Pilihan C:</label></td>
-                        <td><textarea type="text" name="Pilihan_C" id="Pilihan_C"></textarea></td>
+                        <td class="tak"><label for="Pilihan_C">Pilihan C</label></td>
+                        <td class="tak"><textarea type="text" name="Pilihan_C" id="Pilihan_C"></textarea></td>
                     </tr>
                     <tr>
-                        <td><label for="Jawapan">Jawapan:</label></td>
-                        <td><select name="Jawapan" id="Jawapan">
+                        <td class="tak"><label for="Jawapan">Jawapan</label></td>
+                        <td class="tak"><select name="Jawapan" id="Jawapan">
                                 <option value="A">A</option>
                                 <option value="B">B</option>
                                 <option value="C">C</option>
@@ -119,15 +122,17 @@ if (isset($_POST["submit"])) {
                         </td>
                     </tr>
                     <tr>
-                        <td><label for="IDGuru">ID Guru:</label></td>
-                        <td><input type="text" name="IDGuru" id="IDGuru" value="<?= $_SESSION['username'] ?>"></td>
+                        <td class="tak"><label for="IDGuru">ID Guru</label></td>
+                        <td class="tak"><input type="text" name="IDGuru" id="IDGuru" value="<?= $_SESSION['username'] ?>"></td>
                     </tr>
                 </table>
-                <button type="submit" name="submit">Tambah</button>
+                <button type="submit" class="tambah" name="submit">Tambah</button>
 
             </form>
+            <br>
+            <!-- batas padam jawapan pelajar -->
             <?php
-
+            // ini fungsi delete
             if (isset($_POST['padam'])) {
                 $IDPelajar = $_POST['IDPelajar'];
                 $q = "DELETE FROM kuiz WHERE IDPelajar = '$IDPelajar'";
@@ -153,11 +158,11 @@ if (isset($_POST["submit"])) {
             <form class="panjang" action="" method="POST">
                 <table>
                     <tr>
-                        <td> <label for="IDPelajar">ID Pelajar :</label></td>
-                        <td><input type="text" name="IDPelajar" id="IDPelajar"></label></td>
+                        <td class="tak"> <label for="IDPelajar">ID Pelajar</label></td>
+                        <td class="tak"><input type="text" name="IDPelajar" id="IDPelajar"></label></td>
                     </tr>
                 </table>
-                <button type="submit" name="padam">Padam</button>
+                <button type="submit" class="padam" name="padam">Padam</button>
             </form>
         </center>
     </div>
