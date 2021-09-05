@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 //cek guru or not
 if ($_SESSION['status'] != "guru") {
@@ -12,11 +12,13 @@ include "css/menu.php";
 <!-- untuk link menu -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
 <body>
     <div class="menu">
         <h3 class="menu">Menu Utama</h3>
@@ -30,8 +32,9 @@ include "css/menu.php";
             <li><a href="guru_insert.php">Menambah Guru</a></li>
             <li><a href="kelas_insert.php">Menambah Kelas</a></li>
             <li><a href="import.php">Import Data</a></li>
-            <li><a href="logout.php">Log Keluar</a></li>
+            <li><a class="logout" href="logout.php">Log Keluar</a></li>
         </ul>
     </div>
 </body>
+
 </html>

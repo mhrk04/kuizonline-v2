@@ -79,6 +79,7 @@ if (isset($_POST['userid'])) {
 <body>
     <center>
         <h1>Selamat Datang ke Laman Kuiz Santai Sejarah</h1>
+        <img class="logo" src="css/img/mylogo.jpg" alt="">
         <h3 class="pendek">Halaman Login</h3>
         <form action="" method="post" class="pendek">
             <table>

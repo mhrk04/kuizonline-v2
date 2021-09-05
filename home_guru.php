@@ -21,6 +21,9 @@ include "footer.php";
 </head>
 
 <body>
+    <div class="kandungan">
+        <h1>Selamat Datang Cikgu <?= $_SESSION['nama']; ?> </h1>
+    </div>
 </body>
 
 </html>

@@ -33,6 +33,10 @@
     background-color: tomato;
   }
 
+  a.logout {
+    background-color: red;
+  }
+
   /* body {
     /* background-color: black; */
 
