@@ -1,6 +1,7 @@
 <?php
 require "header.php";
 require "menu_guru.php";
+include "css/senarai.php";
 if ($_SESSION['status'] != "guru") {
     header("Location: login.php");
     exit;
@@ -19,12 +20,7 @@ $pelajar = query("SELECT * FROM pelajar");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Senarai Guru</title>
-    <link rel="stylesheet" href="css/senarai.css">
-    <style>
-        ul {
-            list-style: none;
-        }
-    </style>
+    <link rel="shortcut icon" href="css/img/mylogo.jpg" type="image/x-icon">
 </head>
 
 <body>
@@ -33,7 +29,7 @@ $pelajar = query("SELECT * FROM pelajar");
             <br>
             <h3>Senarai Guru</h3>
             <br>
-            <table border="1" cellpadding="10" cellspacing="0">
+            <table class="list">
                 <tr>
                     <th>Bil.</th>
                     <th>ID Guru</th>
@@ -43,7 +39,7 @@ $pelajar = query("SELECT * FROM pelajar");
                 </tr>
                 <?php $i = 1; ?>
                 <?php foreach ($guru as $row) : ?>
-                    <tr>
+                    <tr class="list">
                         <td><?= $i; ?></td>
                         <td><?= $row["IDGuru"]; ?></td>
                         <td><?= $row["Nama_Guru"]; ?></td>
@@ -60,7 +56,7 @@ $pelajar = query("SELECT * FROM pelajar");
             <!-- INI batas ke senarai pelajar -->
 
             <h3>Senarai Pelajar</h3>
-            <table border="1" cellspacing="0" cellpadding="10">
+            <table class="list">
                 <tr>
                     <th>Bil.</th>
                     <th>ID Pelajar</th>
@@ -70,7 +66,7 @@ $pelajar = query("SELECT * FROM pelajar");
                 </tr>
                 <?php $j = 1; ?>
                 <?php foreach ($pelajar as $pel) : ?>
-                    <tr>
+                    <tr class="list">
                         <td><?= $j; ?></td>
                         <td><?= $pel["IDPelajar"]; ?></td>
                         <td><?= $pel["Nama_Pelajar"]; ?></td>
