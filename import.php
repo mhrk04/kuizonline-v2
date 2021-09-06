@@ -10,63 +10,66 @@ if ($_SESSION['status'] != "guru") {
 require "functions.php";
 
 if (isset($_POST['submit'])) {
-  $namajadual = $_POST['namatable'];
-  $namafail = $_FILES['namafail']['tmp_name'];
 
-  $fail = fopen($namafail, "r");
+  //cek file diupload ke tak
+  $is_uploading = $_FILES["namafail"]["error"];
+  $can_pass = $is_uploading == 0 ? true : false;
+  if ($can_pass) {
+    $namajadual = $_POST['namatable'];
+    $namafail = $_FILES['namafail']['tmp_name'];
 
-  while (!feof($fail)) {
-    $medan = explode(",", fgets($fail));
+    $fail = fopen($namafail, "r");
+    while (!feof($fail)) {
+      $medan = explode(",", fgets($fail));
 
-    if ($namajadual == "pelajar") {
-      $IDPelajar = $medan[0];
-      $Nama_Pelajar = $medan[1];
-      $IDKelas = $medan[2];
-      $KataLaluan = $medan[3];
-      $sql = "INSERT INTO pelajar VALUES ('$IDPelajar','$Nama_Pelajar','$IDKelas','$KataLaluan')";
-      if (mysqli_query($conn, $sql)) {
-        $berjaya = true;
-      } else {
-        $berjaya = false;
+      if ($namajadual == "pelajar") {
+        $IDPelajar = $medan[0];
+        $Nama_Pelajar = $medan[1];
+        $IDKelas = $medan[2];
+        $KataLaluan = $medan[3];
+        $sql = "INSERT INTO pelajar VALUES ('$IDPelajar','$Nama_Pelajar','$IDKelas','$KataLaluan')";
+        if (mysqli_query($conn, $sql)) {
+          $berjaya = true;
+        } else {
+          $berjaya = false;
+        }
+      }
+      if ($namajadual == "soalan") {
+        $IDSoalan = $medan[0];
+        $soalan = $medan[1];
+        $piliha = $medan[2];
+        $pilihb = $medan[3];
+        $pilihc = $medan[4];
+        $jawapan = $medan[5];
+        $IDGuru = $medan[6];
+        $sql = "INSERT INTO soalan VALUES ('$IDSoalan','$soalan','$piliha','$pilihb','$pilihc','$jawapan','$IDGuru')";
+        if (mysqli_query($conn, $sql)) {
+          $berjaya = true;
+        } else {
+          $berjaya = false;
+        }
       }
     }
-    if ($namajadual == "soalan") {
-      $IDSoalan = $medan[0];
-      $soalan = $medan[1];
-      $piliha = $medan[2];
-      $pilihb = $medan[3];
-      $pilihc = $medan[4];
-      $jawapan = $medan[5];
-      $IDGuru = $medan[6];
-      $sql = "INSERT INTO soalan VALUES ('$IDSoalan','$soalan','$piliha','$pilihb','$pilihc','$jawapan','$IDGuru')";
-      if (mysqli_query($conn, $sql)) {
-        $berjaya = true;
-      } else {
-        $berjaya = false;
-      }
+    if ($berjaya === true) {
+      echo "
+          <script>
+          alert('data berjaya ditambah');
+          document.location.href = 'import.php';
+          </script>
+          
+          ";
+    } else {
+      echo "
+          <script>
+          alert('data tidak berjaya ditambah');
+          document.location.href = 'import.php';
+          </script>";
     }
-  }
-  if ($berjaya === true) {
-    echo "
-        <script>
-        alert('data berjaya ditambah');
-        document.location.href = 'import.php';
-        </script>
-        
-        ";
   } else {
-    echo "
-        <script>
-        alert('data tidak berjaya ditambah');
-        document.location.href = 'import.php';
-        </script>";
-  }
-  if (mysqli_affected_rows($conn) == 0) {
-    echo "
-        <script>
-        alert('data tidak berjaya ditambah');
-        document.location.href = 'import.php';
-        </script>";
+    echo "<script>
+    alert('data tidak berjaya ditambah');
+    document.location.href = 'import.php';
+    </script>";
   }
 }
 
@@ -83,6 +86,7 @@ include "css/button.php";
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="css/img/mylogo.jpg" type="image/x-icon">
   <title>Import data</title>
 </head>
 
