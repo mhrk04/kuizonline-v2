@@ -1,9 +1,11 @@
-<?php 
+<?php
 require "header.php";
 require "menu_guru.php";
+include "css/button.php";
 if ($_SESSION['status'] != "guru") {
     header("Location: login.php");
-    exit;}
+    exit;
+}
 require "functions.php";
 
 $id = $_GET["id"];
@@ -19,7 +21,7 @@ if (isset($_POST["submit"])) {
         </script>
         
         ";
-    }else{
+    } else {
         echo "
         <script>
         alert('data tidak berjaya diubah');
@@ -28,43 +30,53 @@ if (isset($_POST["submit"])) {
         
         ";
     }
-
 }
 include "css/borang.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kemaskini Data Guru</title>
+    <style>
+        h3.panjang {
+            margin-top: 51px;
+        }
+    </style>
 </head>
+
 <body>
-    <center>
-        <h3 class="pendek">Kemaskini Data Guru</h3>
-        <form class="pendek" action="" method="post">
-        <input type="hidden" name="IDGuru" id="IDGuru" value="<?= $guru['IDGuru']; ?>">
+    <div class="kandungan">
+        <center>
+            <h3 class="panjang">Kemaskini Data Guru</h3>
+            <form class="panjang" action="" method="post">
+                <input type="hidden" name="IDGuru" id="IDGuru" value="<?= $guru['IDGuru']; ?>">
 
-        <table>
-            <tr>
-                <td>ID Guru: </td><td><?= $guru['IDGuru']; ?></td>
-            </tr>
-            <tr>
-            <td><label for="Nama_Guru">Nama Guru:</label></td>
-            <td><input type="text" name="Nama_Guru" id="Nama_Guru" value="<?= $guru['Nama_Guru']; ?>"></td>
-            </tr>
+                <table>
+                    <tr>
+                        <td>ID Guru: </td>
+                        <td><?= $guru['IDGuru']; ?></td>
+                    </tr>
+                    <tr>
+                        <td><label for="Nama_Guru">Nama Guru:</label></td>
+                        <td><input type="text" name="Nama_Guru" id="Nama_Guru" value="<?= $guru['Nama_Guru']; ?>"></td>
+                    </tr>
 
-            <tr>
-            <td><label for="KataLaluan">KataLaluan:</label></td>
-            <td><input type="text" name="KataLaluan" id="KataLaluan" value="<?= $guru['KataLaluan']; ?>"></td>
-            </tr>
+                    <tr>
+                        <td><label for="KataLaluan">KataLaluan:</label></td>
+                        <td><input type="text" name="KataLaluan" id="KataLaluan" value="<?= $guru['KataLaluan']; ?>"></td>
+                    </tr>
 
-            <tr>
-                <td><button type="submit" name="submit">Kemaskini</button></td>
-            </tr>
-        </table>
-        </form>
-    </center>
+                    <tr>
+                        <td><button type="submit" class="update" name="submit">Kemaskini</button></td>
+                    </tr>
+                </table>
+            </form>
+        </center>
+    </div>
 </body>
+
 </html>

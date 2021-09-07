@@ -35,6 +35,7 @@
 
   a.logout {
     background-color: red;
+    margin-top: 10px;
   }
 
   /* body {

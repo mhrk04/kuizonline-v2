@@ -48,7 +48,14 @@ function tambahSO($data)
     $Pilihan_C = htmlspecialchars($data["Pilihan_C"]);
     $Jawapan = htmlspecialchars($data["Jawapan"]);
     $IDGuru = htmlspecialchars($data["IDGuru"]);
+    if (empty($IDSoalan && $Nama_Soalan && $Pilihan_A && $Pilihan_B && $Pilihan_C)) {
+        echo "<script>
+          alert('Terdapat ruangan borang yang belum terisi!');
+          document.location.href = 'soalan_senarai.php';
+          </script>";
 
+        return false;
+    }
 
     // cek ID dah ade blum sudah ada atau belum
     $result = mysqli_query($conn, "SELECT IDSoalan FROM soalan WHERE IDSoalan = '$IDSoalan' ");
