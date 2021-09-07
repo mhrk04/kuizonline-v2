@@ -251,7 +251,13 @@ function registrasi($data)
     $IDKelas = htmlspecialchars($data["IDKelas"]);
     $KataLaluan = mysqli_real_escape_string($conn, $data["KataLaluan"]);
     $KataLaluan2 = mysqli_real_escape_string($conn, $data["KataLaluan2"]);
-
+    //cek klau kosong value
+    if (empty($IDPelajar && $Nama_Pelajar && $KataLaluan && $KataLaluan2)) {
+        echo "<script>
+				alert('Sila isi semua ruang borang signup!');
+		      </script>";
+        return false;
+    }
 
     // cek ID dah ade blum sudah ada atau belum
     $result = mysqli_query($conn, "SELECT IDPelajar FROM pelajar WHERE IDPelajar = '$IDPelajar' ");
@@ -278,8 +284,4 @@ function registrasi($data)
     $query = "INSERT INTO pelajar VALUES ('$IDPelajar','$Nama_Pelajar','$IDKelas','$KataLaluan') ";
     mysqli_query($conn, $query);
     return mysqli_affected_rows($conn);
-}
-
-function laporan()
-{
 }

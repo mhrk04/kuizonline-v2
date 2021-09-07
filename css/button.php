@@ -25,7 +25,7 @@
   }
 
   button.tambah {
-    background: url('css/img/add.png')no-repeat;
+    background: url('css/img/add.png') no-repeat;
   }
 
   button.simpan {

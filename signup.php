@@ -4,7 +4,11 @@ include "css/borang.php";
 include "css/button.php";
 if (isset($_POST["signup"])) {
     if (registrasi($_POST) > 0) {
-        echo "<script>alert('Berjaya Sign Up!');</script>";
+        echo "
+        <script>
+        alert('Berjaya Sign Up!');
+        document.location.href = 'login.php';
+        </script>";
     } else {
         echo mysqli_error($conn);
     }
@@ -32,32 +36,35 @@ if (isset($_POST["signup"])) {
             <table>
                 <tr>
                     <td><label for="IDPelajar">ID Pelajar </label></td>
-                    <td><input type="text" name="IDPelajar" id="IDPelajar" placeholder="Max 4 char" required></td>
+                    <td><input type="text" name="IDPelajar" id="IDPelajar" placeholder="Max 4 char"></td>
                 </tr>
                 <tr>
                     <td><label for="Nama_Pelajar">Nama </label></td>
-                    <td><input type="text" name="Nama_Pelajar" id="Nama_Pelajar" required></td>
+                    <td><input type="text" name="Nama_Pelajar" id="Nama_Pelajar"></td>
                 </tr>
                 <tr>
                     <td><label for="IDKelas">Kelas </label></td>
-                    <td><select id="IDKelas" required name="IDKelas">
+                    <td><select id="IDKelas" name="IDKelas">
                             <?php kelaslist(); ?>
                         </select>
                     </td>
                 </tr>
                 <tr>
                     <td><label for="KataLaluan">KataLaluan </label></td>
-                    <td><input type="password" name="KataLaluan" id="KataLaluan" placeholder="max 8 char" required></td>
+                    <td><input type="password" name="KataLaluan" id="KataLaluan" placeholder="max 8 char"></td>
                 </tr>
                 <tr>
                     <td><label for="KataLaluan2">Pengesahan KataLaluan </label></td>
-                    <td><input type="password" name="KataLaluan2" id="KataLaluan2" placeholder="max 8 char" required></td>
+                    <td><input type="password" name="KataLaluan2" id="KataLaluan2" placeholder="max 8 char"></td>
                 </tr>
             </table>
             <button type="submit" class="signup" name="signup">Daftar</button>
             <button type="button" class="padam" onclick="window.location='login.php'">Batal</button>
         </form>
     </center>
+    <?php
+    include "footer.php"
+    ?>
 </body>
 
 </html>

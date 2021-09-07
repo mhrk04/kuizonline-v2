@@ -30,7 +30,9 @@ if (isset($_POST['submit'])) {
         $sql = "insert into kuiz values('$IDPelajar','$IDSoalan', '$Tarikh', '$jawapanpelajar',0)";
         mysqli_query($conn, $sql);
     }
-    header("Location: jawab_ulangkaji.php");
+    echo "<script>
+    document.location.href = 'jawab_ulangkaji.php';
+    </script>";
 }
 include "css/senarai.php";
 include "css/button.php";
