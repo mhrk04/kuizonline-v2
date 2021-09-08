@@ -8,8 +8,7 @@
         color: white;
         text-align: center;
         z-index: 6;
+        text-align: center;
     }
 </style>
-<center>
-    <footer>HAK MILIK MUHAMMAD HAZIQ BIN ROHAIZAN <sup> &copy;</sup></footer>
-</center>
+<footer>HAK MILIK MUHAMMAD HAZIQ BIN ROHAIZAN <sup> &copy;</sup></footer>
