@@ -6,8 +6,6 @@ if ($_SESSION['status'] != "guru") {
     exit;
 }
 $nama = $_SESSION['nama'];
-
-include "footer.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,6 +22,7 @@ include "footer.php";
     <div class="kandungan">
         <h1>Selamat Datang Cikgu <?= $_SESSION['nama']; ?> </h1>
     </div>
+    <?php include "footer.php" ?>
 </body>
 
 </html>
