@@ -45,8 +45,8 @@ $pelajar = query("SELECT * FROM pelajar");
                         <td><?= $row["Nama_Guru"]; ?></td>
                         <!-- <td> //$row["KataLaluan"]; </td>             -->
                         <td>
-                            <a href="guru_update.php?id=<?= $row['IDGuru']; ?>">Ubah</a> |
-                            <a href="hapus.php?id=<?= $row['IDGuru']; ?>&table=guru&fill=IDGuru" onclick="return confirm('Yakin hendak dipadam');">Padam</a>
+                            <a href="guru_update.php?id=<?= $row['IDGuru']; ?>">Ubah</a>
+                            <a class="padam" href="hapus.php?id=<?= $row['IDGuru']; ?>&table=guru&fill=IDGuru" onclick="return confirm('Yakin hendak dipadam');">Padam</a>
                         </td>
                     </tr>
                     <?php $i++; ?>
@@ -72,7 +72,7 @@ $pelajar = query("SELECT * FROM pelajar");
                         <td><?= $pel["Nama_Pelajar"]; ?></td>
                         <td><?= $pel["IDKelas"]; ?></td>
                         <td>
-                            <a href="pelajar_update.php?id=<?= $pel['IDPelajar']; ?>">Ubah</a> |
+                            <a href="pelajar_update.php?id=<?= $pel['IDPelajar']; ?>">Ubah</a>
                             <a href="hapus.php?id=<?= $pel['IDPelajar']; ?>&table=pelajar&fill=IDPelajar" onclick="return confirm('Yakin hendak dipadam');">Padam</a>
                         </td>
                     </tr>

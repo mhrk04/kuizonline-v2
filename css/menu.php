@@ -109,4 +109,20 @@
     /* background-color: rgb(61, 233, 127); */
     padding: auto;
   }
+
+  .padam:link,
+  .padam:visited {
+    background-color: #f44336;
+    color: white;
+    padding: 9px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 1.5rem;
+  }
+
+  .padam:hover,
+  .padam:active {
+    background-color: red;
+  }
 </style>
