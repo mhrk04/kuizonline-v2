@@ -26,4 +26,3 @@ include "css/menu.php";
         <li><a class="logout" href="logout.php">Log Keluar</a></li>
     </ul>
 </div>
-<?php include "footer.php" ?>

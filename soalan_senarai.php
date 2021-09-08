@@ -1,4 +1,5 @@
 <?php
+$title = "Soalan";
 require "header.php";
 require "menu_guru.php";
 if ($_SESSION['status'] != "guru") {
@@ -6,7 +7,6 @@ if ($_SESSION['status'] != "guru") {
     exit;
 }
 require "functions.php";
-include "footer.php";
 include "css/senarai.php";
 include "css/button.php";
 $soalan = query("SELECT * FROM soalan");
@@ -37,17 +37,6 @@ if (isset($_POST["submit"])) {
 
 ?>
 
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Senarai Soalan</title>
-
-</head>
 
 <body>
     <div class="kandungan">
@@ -166,6 +155,7 @@ if (isset($_POST["submit"])) {
             </form>
         </center>
     </div>
+    <?php include "footer.php" ?>
 </body>
 
 </html>
