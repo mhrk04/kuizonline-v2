@@ -1,4 +1,5 @@
 <?php
+$title = "Kelas";
 require "header.php";
 require "menu_guru.php";
 if ($_SESSION['status'] != "guru") {
@@ -9,7 +10,6 @@ require "functions.php";
 include "css/senarai.php";
 include "css/button.php";
 include "css/borang.php";
-include "footer.php";
 $kelas = query("SELECT * FROM kelas");
 
 //cek bile tekan tambah
@@ -35,17 +35,6 @@ if (isset($_POST["submit"])) {
 }
 ?>
 
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tambah Kelas</title>
-</head>
-
 <body>
     <div class="kandungan">
         <h2>Senarai Kelas</h2>
@@ -65,7 +54,7 @@ if (isset($_POST["submit"])) {
                     <td><?= $row["Nama_Kelas"]; ?></td>
                     <td>
                         <a href="kelas_update.php?IDKelas=<?= $row['IDKelas']; ?>">Ubah</a> |
-                        <a href="hapus.php?id=<?= $row['IDKelas']; ?>&table=kelas&fill=IDKelas" onclick="return confirm('Yakin hendak dipadam');">Padam</a>
+                        <a class="padam" href="hapus.php?id=<?= $row['IDKelas']; ?>&table=kelas&fill=IDKelas" onclick="return confirm('Yakin hendak dipadam');">Padam</a>
                     </td>
                 </tr>
                 <?php $i++; ?>

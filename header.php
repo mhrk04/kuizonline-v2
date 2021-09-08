@@ -24,3 +24,4 @@
   <div class="header">
     <h1 class="header">KUIZ SANTAI SEJARAH </h1>
   </div>
+  <?php include "footer.php" ?>

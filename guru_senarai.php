@@ -1,4 +1,5 @@
 <?php
+$title = "Senarai Guru & Pelajar";
 require "header.php";
 require "menu_guru.php";
 include "css/senarai.php";
@@ -11,9 +12,6 @@ $guru = query("SELECT * FROM guru");
 $pelajar = query("SELECT * FROM pelajar");
 
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -73,7 +71,7 @@ $pelajar = query("SELECT * FROM pelajar");
                         <td><?= $pel["IDKelas"]; ?></td>
                         <td>
                             <a href="pelajar_update.php?id=<?= $pel['IDPelajar']; ?>">Ubah</a>
-                            <a href="hapus.php?id=<?= $pel['IDPelajar']; ?>&table=pelajar&fill=IDPelajar" onclick="return confirm('Yakin hendak dipadam');">Padam</a>
+                            <a class="padam" href="hapus.php?id=<?= $pel['IDPelajar']; ?>&table=pelajar&fill=IDPelajar" onclick="return confirm('Yakin hendak dipadam');">Padam</a>
                         </td>
                     </tr>
                     <?php $j++; ?>
