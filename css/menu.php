@@ -40,7 +40,9 @@
 
   /* body {
     /* background-color: black; */
-
+  body {
+    background-color: rgb(121, 148, 238);
+  }
 
   div.all {
     width: 700px;

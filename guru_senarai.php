@@ -3,23 +3,18 @@ $title = "Senarai Guru & Pelajar";
 require "header.php";
 require "menu_guru.php";
 include "css/senarai.php";
+//cek session
 if ($_SESSION['status'] != "guru") {
     header("Location: login.php");
     exit;
 }
 require "functions.php";
+//query untuk senarai
 $guru = query("SELECT * FROM guru");
 $pelajar = query("SELECT * FROM pelajar");
 
 ?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Senarai Guru</title>
-    <link rel="shortcut icon" href="css/img/mylogo.jpg" type="image/x-icon">
-</head>
 
 <body>
     <div class="kandungan">
