@@ -57,12 +57,8 @@ if (isset($_POST["submit"])) {
                         </label>
                     </td>
                 </tr>
-                <tr>
-                    <td>
-                        <button type="submit" name="submit">Kemaskini</button>
-                    </td>
-                </tr>
             </table>
+            <button type="submit" class="update" name="submit">Kemaskini</button>
         </form>
     </div>
 </body>

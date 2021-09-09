@@ -35,7 +35,7 @@ if (isset($_POST["signup"])) {
             <table>
                 <tr>
                     <td><label for="IDPelajar">ID Pelajar </label></td>
-                    <td><input type="text" name="IDPelajar" id="IDPelajar" placeholder="Max 4 char"></td>
+                    <td><input maxlength="4" type="text" name="IDPelajar" id="IDPelajar" placeholder="Max 4 char"></td>
                 </tr>
                 <tr>
                     <td><label for="Nama_Pelajar">Nama </label></td>
@@ -50,11 +50,11 @@ if (isset($_POST["signup"])) {
                 </tr>
                 <tr>
                     <td><label for="KataLaluan">KataLaluan </label></td>
-                    <td><input type="password" name="KataLaluan" id="KataLaluan" placeholder="max 8 char"></td>
+                    <td><input type="password" name="KataLaluan" id="KataLaluan"></td>
                 </tr>
                 <tr>
                     <td><label for="KataLaluan2">Pengesahan KataLaluan </label></td>
-                    <td><input type="password" name="KataLaluan2" id="KataLaluan2" placeholder="max 8 char"></td>
+                    <td><input type="password" name="KataLaluan2" id="KataLaluan2"></td>
                 </tr>
             </table>
             <button type="submit" class="signup" name="signup">Daftar</button>
