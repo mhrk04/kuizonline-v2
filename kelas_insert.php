@@ -34,6 +34,11 @@ if (isset($_POST["submit"])) {
     }
 }
 ?>
+<style>
+    h2 {
+        text-align: center;
+    }
+</style>
 
 <body>
     <div class="kandungan">

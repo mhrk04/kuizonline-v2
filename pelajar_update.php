@@ -1,4 +1,5 @@
 <?php
+$title = "Kemaskini Pelajar";
 require "header.php";
 require "menu_guru.php";
 include "css/borang.php";
@@ -37,17 +38,12 @@ if (isset($_POST["submit"])) {
     }
 }
 ?>
-
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kemaskini Data Pelajar</title>
-</head>
+<!-- batas html -->
+<style>
+    h3.panjang {
+        margin-top: 30px;
+    }
+</style>
 
 <body>
     <div class="kandungan">
@@ -78,7 +74,7 @@ if (isset($_POST["submit"])) {
                 </tr>
             </table>
         </form>
-        <a href="guru_senarai.php">Kembali ke Senarai Nama</a>
+        <!-- <a href="guru_senarai.php">Kembali ke Senarai Nama</a> -->
     </div>
 </body>
 

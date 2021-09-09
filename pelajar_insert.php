@@ -1,4 +1,5 @@
 <?php
+$title = "Tambah Pelajar";
 require "header.php";
 require "menu_guru.php";
 include "css/borang.php";
