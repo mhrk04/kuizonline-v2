@@ -1,5 +1,4 @@
 <?php
-session_start();
 if ($_SESSION['status'] != "pelajar") {
     header("Location: login.php");
     exit;

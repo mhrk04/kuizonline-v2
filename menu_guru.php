@@ -1,5 +1,5 @@
 <?php
-session_start();
+// session_start();
 //cek guru or not
 if ($_SESSION['status'] != "guru") {
     header("Location: login.php");
