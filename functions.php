@@ -253,7 +253,7 @@ function registrasi($data)
 {
     global $conn;
     // isi variable
-    $IDPelajar = $data["IDPelajar"];
+    $IDPelajar = htmlspecialchars($data["IDPelajar"]);
     $Nama_Pelajar = htmlspecialchars($data["Nama_Pelajar"]);
     $IDKelas = htmlspecialchars($data["IDKelas"]);
     $KataLaluan = mysqli_real_escape_string($conn, $data["KataLaluan"]);
@@ -268,7 +268,8 @@ function registrasi($data)
 
     // cek ID dah ade blum sudah ada atau belum
     $result = mysqli_query($conn, "SELECT IDPelajar FROM pelajar WHERE IDPelajar = '$IDPelajar' ");
-    if (mysqli_fetch_assoc($result)) {
+    $result2 = mysqli_query($conn, "SELECT IDGuru FROM guru WHERE IDGuru = '$IDPelajar' ");
+    if (mysqli_fetch_assoc($result) || mysqli_fetch_assoc($result2)) {
         echo "<script>
 				alert('ID sudah digunakan!')
 		      </script>";
