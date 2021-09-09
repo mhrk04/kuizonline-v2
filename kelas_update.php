@@ -1,9 +1,13 @@
-<?php 
+<?php
+$title = "Kemaskini Kelas";
 require "header.php";
 require "menu_guru.php";
+include "css/borang.php";
+include "css/button.php";
 if ($_SESSION['status'] != "guru") {
     header("Location: login.php");
-    exit;}
+    exit;
+}
 require "functions.php";
 
 //ambil id di url
@@ -23,7 +27,7 @@ if (isset($_POST["submit"])) {
         </script>
         
         ";
-    }else{
+    } else {
         echo "
         <script>
         alert('data tidak berjaya diubah');
@@ -32,43 +36,35 @@ if (isset($_POST["submit"])) {
         
         ";
     }
-
 }
 ?>
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kemaskini Data Kelas</title>
-    <link rel="stylesheet" href="css/borang.css">
-</head>
 <body>
-    <h3>Kemaskini Data Kelas</h3>
-    <form action="" method="post">
-        <table>
-        <input  type="hidden" name="IDKelas" id="IDKelas" placeholder="cht:P001" value="<?= $kelas['IDKelas']?>">
-            <tr>
-                <td> ID Kelas: <?= $kelas['IDKelas']; ?> </td>
-            </tr>
-            <tr>
-                <td>
-                <label for="Nama_Kelas">
-                    Nama Kelas :
-                    <input type="text" name="Nama_Kelas" id="Nama_Kelas" required value="<?= $kelas['Nama_Kelas']?>">
-                </label>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <button type="submit" name="submit">Kemaskini</button>
-                </td>
-            </tr>
-        </table>
-    </form>
-    <a href="kelas_insert.php">Kembali</a>
+    <div class="kandungan">
+        <h3 class="pendek">Kemaskini Data Kelas</h3>
+        <form class="pendek" action="" method="post">
+            <table>
+                <input type="hidden" name="IDKelas" id="IDKelas" placeholder="cht:P001" value="<?= $kelas['IDKelas'] ?>">
+                <tr>
+                    <td> ID Kelas: <?= $kelas['IDKelas']; ?> </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="Nama_Kelas">
+                            Nama Kelas :
+                            <input type="text" name="Nama_Kelas" id="Nama_Kelas" required value="<?= $kelas['Nama_Kelas'] ?>">
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="submit" name="submit">Kemaskini</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
 </body>
+
 </html>
