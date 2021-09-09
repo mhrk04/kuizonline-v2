@@ -39,10 +39,6 @@ if (isset($_POST["submit"])) {
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tambah Pelajar</title>
     <style>
         h3.panjang {
             margin-top: 115px;
@@ -57,7 +53,7 @@ if (isset($_POST["submit"])) {
             <table>
                 <tr>
                     <td><label for="IDPelajar">ID :</label></td>
-                    <td><input required type="text" name="IDPelajar" id="IDPelajar" placeholder="Max 4 Char"></td>
+                    <td><input required type="text" name="IDPelajar" id="IDPelajar" maxlength="4" placeholder="Contoh:P001"></td>
 
                 </tr>
                 <tr>
@@ -75,12 +71,9 @@ if (isset($_POST["submit"])) {
                 <tr>
                     <td><label for="KataLaluan">KataLaluan : </label></td>
                     <td><input required type="password" id="KataLaluan" name="KataLaluan"></td>
-
-                </tr>
-                <tr>
-                    <td><button class="tambah" type="submit" name="submit">Tambah</button></td>
                 </tr>
             </table>
+            <button class="tambah" type="submit" name="submit">Tambah</button>
         </form>
     </div>
 </body>

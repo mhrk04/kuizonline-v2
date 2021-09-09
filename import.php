@@ -101,10 +101,8 @@ include "css/button.php";
             <input type="file" name="namafail" id="namafail" accept=".txt" />
           </td>
         </tr>
-        <tr>
-          <td><button type="submit" name="submit">Import</button></td>
-        </tr>
       </table>
+      <button type="submit" class="import" name="submit">Import</button>
     </form>
   </div>
   <br>

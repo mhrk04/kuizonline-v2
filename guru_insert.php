@@ -48,7 +48,7 @@ if (isset($_POST["submit"])) {
                 <table>
                     <tr>
                         <td><label for="IDGuru">ID Guru:</label></td>
-                        <td><input type="text" name="IDGuru" id="IDGuru" placeholder="Max Char 3"></td>
+                        <td><input type="text" name="IDGuru" id="IDGuru" maxlength="3" placeholder="Max Char 3"></td>
                     </tr>
                     <tr>
                         <td><label for="Nama_Guru">Nama Guru:</label></td>
@@ -58,10 +58,8 @@ if (isset($_POST["submit"])) {
                         <td><label for="KataLaluan">KataLaluan:</label></td>
                         <td><input type="password" name="KataLaluan" id="KataLaluan"></td>
                     </tr>
-                    <tr>
-                        <td><button type="submit" class="tambah" name="submit">Tambah</button></td>
-                    </tr>
                 </table>
+                <button type="submit" class="tambah" name="submit">Tambah</button>
             </form>
         </center>
     </div>

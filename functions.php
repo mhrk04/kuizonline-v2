@@ -23,9 +23,16 @@ function tambah($data)
     $IDKelas = htmlspecialchars($data["IDKelas"]);
     $KataLaluan = htmlspecialchars($data["KataLaluan"]);
 
+    if (empty($IDPelajar || $Nama_Pelajar || $KataLaluan)) {
+        echo "<script>
+				alert('Sila isi semua ruang borang signup!');
+		      </script>";
+        return false;
+    }
     // cek ID dah ade blum sudah ada atau belum
     $result = mysqli_query($conn, "SELECT IDPelajar FROM pelajar WHERE IDPelajar = '$IDPelajar' ");
-    if (mysqli_fetch_assoc($result)) {
+    $result2 = mysqli_query($conn, "SELECT IDGuru FROM guru WHERE IDGuru = '$IDPelajar' ");
+    if (mysqli_fetch_assoc($result) || mysqli_fetch_assoc($result2)) {
         echo "<script>
                  alert('ID sudah digunakan!')
                </script>";

@@ -62,7 +62,7 @@
   }
 
   button.import {
-    background-image: url(/img/import.png);
+    background: url(css/img/import.png) no-repeat;
   }
 
   button.cetak {
