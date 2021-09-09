@@ -73,13 +73,21 @@ if (isset($_POST['userid'])) {
             font-size: 40px;
             text-decoration: teal;
         }
+
+        p {
+            border: 2px dotted red;
+            margin: auto;
+            display: block;
+            border-radius: 1.15rem;
+            background-color: salmon;
+        }
     </style>
 </head>
 
 <body>
     <center>
         <h1>Selamat Datang ke Laman Kuiz Santai Sejarah</h1>
-        <img class="logo" src="css/img/mylogo.jpg" alt="">
+        <!-- <img class="logo" src="css/img/mylogo.jpg" alt=""> -->
         <h3 class="pendek">Halaman Login</h3>
         <form action="" method="post" class="pendek">
             <table>
@@ -95,6 +103,8 @@ if (isset($_POST['userid'])) {
             <button type="submit" class="login" name="login">Login</button>
             <button type="button" class="signup" onclick="window.location='signup.php'">Sign Up</button>
         </form>
+        <br>
+        <p>Pastikan anda tidak menyekat fungsi javascript. <br>Website ini berjalan dengan optimal apabila dijalankan pada pelayar di desktop.</p>
     </center>
 </body>
 <footer>
