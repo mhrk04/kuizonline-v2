@@ -47,9 +47,9 @@ if (isset($_POST["submit"])) {
                     <th class="bil">Bil.</th>
                     <th>ID Soalan</th>
                     <th>Soalan</th>
-                    <th>Pilihan A</th>
+                    <!-- <th>Pilihan A</th>
                     <th>Pilihan B</th>
-                    <th>Pilihan C</th>
+                    <th>Pilihan C</th> -->
                     <th>Jawapan</th>
                     <th>ID Guru</th>
                     <th>Aksi</th>
@@ -60,15 +60,10 @@ if (isset($_POST["submit"])) {
                         <td><?= $i; ?></td>
                         <td><?= $row["IDSoalan"]; ?></td>
                         <td><?= $row["Nama_Soalan"]; ?></td>
-                        <td><?= $row["Pilihan_A"]; ?></td>
-                        <td><?= $row["Pilihan_B"]; ?></td>
-                        <td><?= $row["Pilihan_C"]; ?></td>
                         <td><?= $row["Jawapan"]; ?></td>
                         <td><?= $row["IDGuru"]; ?></td>
-
-
                         <td>
-                            <a href="soalan_update.php?id=<?= $row['IDSoalan']; ?>">Ubah</a>
+                            <a class="update" href="soalan_update.php?id=<?= $row['IDSoalan']; ?>">Lebih lagi</a>
                             <a class="padam" href="hapus.php?id=<?= $row['IDSoalan']; ?>&table=soalan&fill=IDSoalan" onclick="return confirm('Yakin hendak dipadam');">Padam</a>
                         </td>
                     </tr>

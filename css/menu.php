@@ -112,10 +112,11 @@
     padding: auto;
   }
 
+  /* css padam */
   .padam:link,
   .padam:visited {
     background-color: #f44336;
-    color: white;
+    color: black;
     padding: 9px;
     text-align: center;
     text-decoration: none;
@@ -126,6 +127,23 @@
   .padam:hover,
   .padam:active {
     background-color: red;
+  }
+
+  /* css update */
+  .update:link,
+  .update:visited {
+    background-color: green;
+    color: black;
+    padding: 9px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 1.5rem;
+  }
+
+  .update:hover,
+  .update:active {
+    background-color: green;
   }
 
   .aktif {
