@@ -127,4 +127,8 @@
   .padam:active {
     background-color: red;
   }
+
+  .aktif {
+    background-color: tomato;
+  }
 </style>

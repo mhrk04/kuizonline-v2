@@ -1,4 +1,5 @@
 <?php
+$title = "Mula Kuiz";
 require "header.php";
 require "menu_pelajar.php";
 if ($_SESSION['status'] != "pelajar") {
