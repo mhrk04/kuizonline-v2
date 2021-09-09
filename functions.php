@@ -13,7 +13,7 @@ function query($query)
     }
     return $rows;
 }
-
+// fungsi add pelajar bagi guru
 function tambah($data)
 {
     global $conn;
@@ -296,7 +296,7 @@ function registrasi($data)
           </script>";
         return false;
     }    // tambahkan userbaru ke database
-    $query = "INSERT INTO pelajar VALUES ('$IDPelajar','$Nama_Pelajar','$IDKelas','$KataLaluan') ";
+    $query = "INSERT INTO pelajar VALUES ('$IDPelajar','$Nama_Pelajar','$IDKelas','$KataLaluan');";
     mysqli_query($conn, $query);
     return mysqli_affected_rows($conn);
 }
