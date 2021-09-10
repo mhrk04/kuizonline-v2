@@ -1,6 +1,6 @@
 <?php
 $title = "Home Guru";
-include "header.php";
+require "header.php";
 require "menu_guru.php";
 if ($_SESSION['status'] != "guru") {
     header("Location: login.php");
