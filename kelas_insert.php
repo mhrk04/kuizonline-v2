@@ -72,7 +72,7 @@ if (isset($_POST["submit"])) {
             <table style="border: none; margin:auto;">
                 <tr>
                     <td class="tak"><label for="IDKelas"> ID kelas</label></td>
-                    <td class="tak"> <input type="text" name="IDKelas" id="IDKelas" placeholder="max 3 char"></td>
+                    <td class="tak"> <input maxlength="3" type="text" name="IDKelas" id="IDKelas" placeholder="max 3 char"></td>
                 </tr>
                 <tr>
                     <td class="tak"> Nama kelas</td>

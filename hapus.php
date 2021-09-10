@@ -1,16 +1,24 @@
-<?php 
+<?php
 session_start();
 if ($_SESSION['status'] != "guru") {
     header("Location: login.php");
-    exit;}
+    exit;
+}
 require "functions.php";
 
 
-    $id = $_GET["id"];
-    $fill = $_GET["fill"];
-    $table = $_GET["table"];
-
-if ( hapus($id,$table,$fill) > 0) {
+$id = $_GET["id"];
+$fill = $_GET["fill"];
+$table = $_GET["table"];
+if ($id == $_SESSION['username'] && $table == 'guru') {
+    echo "
+           <script>
+           alert('User sedang digunakan !');
+           document.location.href = 'guru_senarai.php';
+           </script>";
+    exit;
+}
+if (hapus($id, $table, $fill) > 0) {
     switch ($table) {
         case 'soalan':
             echo "
@@ -20,34 +28,29 @@ if ( hapus($id,$table,$fill) > 0) {
          </script>";
             break;
         case 'pelajar':
-                echo "
+            echo "
              <script>
              alert('Data berjaya dihapus !');
              document.location.href = 'guru_senarai.php';
              </script>";
-                break;
-        case 'guru' :
+            break;
+        case 'guru':
             echo "
            <script>
            alert('Data berjaya dihapus !');
            document.location.href = 'guru_senarai.php';
            </script>";
-           break;
-        case 'kelas' :
+            break;
+        case 'kelas':
             echo "<script>
             alert('Data berjaya dihapus !');
             document.location.href = 'kelas_insert.php';
             </script>";
-
     }
-   
-        
-  
-    
-}else{ echo "
+} else {
+    echo "
         <script>
         alert('Data tidak berjaya dihapus.');
         document.location.href = 'home_guru.php';
-        </script>";  
+        </script>";
 }
-?>

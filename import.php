@@ -29,11 +29,12 @@ if (isset($_POST['submit'])) {
         $IDKelas = $medan[2];
         $KataLaluan = $medan[3];
         $sql = "INSERT INTO pelajar VALUES ('$IDPelajar','$Nama_Pelajar','$IDKelas','$KataLaluan')";
-        if (mysqli_query($conn, $sql)) {
-          $berjaya = true;
-        } else {
-          $berjaya = false;
-        }
+        mysqli_query($conn, $sql);
+        // if (mysqli_query($conn, $sql)) {
+        //   $berjaya = true;
+        // } else {
+        //   $berjaya = false;
+        // }
       }
       if ($namajadual == "soalan") {
         $IDSoalan = $medan[0];
@@ -44,14 +45,15 @@ if (isset($_POST['submit'])) {
         $jawapan = $medan[5];
         $IDGuru = $medan[6];
         $sql = "INSERT INTO soalan VALUES ('$IDSoalan','$soalan','$piliha','$pilihb','$pilihc','$jawapan','$IDGuru')";
-        if (mysqli_query($conn, $sql)) {
-          $berjaya = true;
-        } else {
-          $berjaya = false;
-        }
+        mysqli_query($conn, $sql);
+        // if (mysqli_query($conn, $sql)) {
+        //   $berjaya = true;
+        // } else {
+        //   $berjaya = false;
+        // }
       }
     }
-    if ($berjaya === true) {
+    if (mysqli_affected_rows($conn) !== 0) {
       echo "
           <script>
           alert('data berjaya ditambah');
@@ -68,7 +70,7 @@ if (isset($_POST['submit'])) {
     }
   } else {
     echo "<script>
-    alert('data tidak berjaya ditambah');
+    alert('data tidak berjaya ditambah !');
     document.location.href = 'import.php';
     </script>";
   }

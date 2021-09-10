@@ -132,7 +132,7 @@
   /* css update */
   .update:link,
   .update:visited {
-    background-color: green;
+    background-color: rgb(159, 237, 107);
     color: black;
     padding: 9px;
     text-align: center;
