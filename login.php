@@ -74,13 +74,13 @@ if (isset($_POST['userid'])) {
             text-decoration: teal;
         }
 
-        p {
+        /* p {
             border: 2px dotted red;
             margin: auto;
             display: block;
             border-radius: 1.15rem;
             background-color: salmon;
-        }
+        } */
     </style>
 </head>
 
@@ -93,18 +93,18 @@ if (isset($_POST['userid'])) {
             <table>
                 <tr>
                     <!-- <td><label for="userid">User ID</label></td> -->
-                    <td><img src="css/img/user.png" alt="user"> <input type="text" id="userid" name="userid" placeholder="IDPengguna"></td>
+                    <td><img src="css/img/user.png" alt="user"> <input type="text" id="userid" name="userid" maxlength="4" placeholder="IDPengguna"></td>
                 </tr>
                 <tr>
                     <!-- <td><label for="KataLaluan">KataLaluan</label></td> -->
-                    <td><img src="css/img/lock.png" alt=""> <input type="password" name="KataLaluan" placeholder="KataLaluan" id="KataLaluan"></td>
+                    <td><img src="css/img/lock.png" alt=""> <input type="password" name="KataLaluan" maxlength="16" placeholder="KataLaluan" id="KataLaluan"></td>
                 </tr>
             </table>
             <button type="submit" class="login" name="login">Login</button>
             <button type="button" class="signup" onclick="window.location='signup.php'">Sign Up</button>
         </form>
         <br>
-        <p>Pastikan anda tidak menyekat fungsi javascript. <br>Website ini berjalan dengan optimal apabila dijalankan pada pelayar di desktop.</p>
+        <!-- <p>Pastikan anda tidak menyekat fungsi javascript. <br>Website ini berjalan dengan optimal apabila dijalankan pada pelayar di desktop.</p> -->
     </center>
 </body>
 <footer>

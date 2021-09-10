@@ -50,11 +50,11 @@ if (isset($_POST["signup"])) {
                 </tr>
                 <tr>
                     <td><label for="KataLaluan">KataLaluan </label></td>
-                    <td><input type="password" name="KataLaluan" id="KataLaluan"></td>
+                    <td><input type="password" maxlength="16" name="KataLaluan" id="KataLaluan"></td>
                 </tr>
                 <tr>
                     <td><label for="KataLaluan2">Pengesahan KataLaluan </label></td>
-                    <td><input type="password" name="KataLaluan2" id="KataLaluan2"></td>
+                    <td><input type="password" maxlength="16" name="KataLaluan2" id="KataLaluan2"></td>
                 </tr>
             </table>
             <button type="submit" class="signup" name="signup">Daftar</button>
