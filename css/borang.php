@@ -50,6 +50,7 @@
     width: auto;
     padding: 5px;
     margin: 5px;
+    border-radius: 15px;
   }
 
   table {
