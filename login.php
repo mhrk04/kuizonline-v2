@@ -99,6 +99,10 @@ if (isset($_POST['userid'])) {
                     <!-- <td><label for="KataLaluan">KataLaluan</label></td> -->
                     <td><img src="css/img/lock.png" alt=""> <input type="password" name="KataLaluan" maxlength="16" placeholder="KataLaluan" id="KataLaluan"></td>
                 </tr>
+                <tr>
+                    <td><input type="checkbox" onclick="showpass()">Papar KataLaluan
+                    </td>
+                </tr>
             </table>
             <button type="submit" class="login" name="login">Login</button>
             <button type="button" class="signup" onclick="window.location='signup.php'">Sign Up</button>
@@ -106,6 +110,7 @@ if (isset($_POST['userid'])) {
         <br>
         <!-- <p>Pastikan anda tidak menyekat fungsi javascript. <br>Website ini berjalan dengan optimal apabila dijalankan pada pelayar di desktop.</p> -->
     </center>
+    <script src="js/laporan.js"></script>
 </body>
 <footer>
     <?php

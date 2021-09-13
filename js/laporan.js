@@ -39,3 +39,12 @@ function padam_pilihan() {
   document.getElementById("kelas").style.display = paparKelas;
   document.getElementById("pelajar").style.display = paparInput;
 }
+//fungsi papar password
+function showpass() {
+  var x = document.getElementById("KataLaluan");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
