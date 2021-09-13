@@ -300,3 +300,26 @@ function registrasi($data)
     mysqli_query($conn, $query);
     return mysqli_affected_rows($conn);
 }
+
+
+function padamJawapan($data)
+{
+    global $conn;
+    $pilihan = $data['pilihan'];
+    $idkelas = $data['IDKelas'];
+    $idpelajar = htmlspecialchars($data['IDPelajar']);
+    switch ($pilihan) {
+        case 1:
+            $sql = "DELETE FROM kuiz";
+            break;
+        case 2:
+            $sql = "DELETE `kuiz` FROM `kuiz` LEFT JOIN pelajar ON kuiz.IDPelajar = pelajar.IDPelajar WHERE pelajar.IDKelas = '$idkelas';
+            ";
+            break;
+        case 3:
+            $sql = "DELETE FROM kuiz WHERE IDPelajar = '$idpelajar'";
+            break;
+    }
+    mysqli_query($conn, $sql);
+    return mysqli_affected_rows($conn);
+}

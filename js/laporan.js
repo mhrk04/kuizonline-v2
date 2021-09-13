@@ -19,3 +19,23 @@ function papar_pilihan() {
   document.getElementById("kelas").style.display = paparKelas;
   document.getElementById("peratus").style.display = paparPeratus;
 }
+
+function padam_pilihan() {
+  var pilih = document.getElementById("pilihan").value;
+  var paparKelas = "none";
+  var paparInput = "none";
+
+  if (pilih == 1){
+    paparKelas = "none";
+    paparInput = "none";
+} else if (pilih == 2) {
+  paparKelas = "block";
+  paparInput = "none";
+} else if (pilih == 3) {
+  paparKelas = "none";
+  paparInput = "block";
+}
+
+  document.getElementById("kelas").style.display = paparKelas;
+  document.getElementById("pelajar").style.display = paparInput;
+}

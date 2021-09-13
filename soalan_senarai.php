@@ -114,43 +114,61 @@ if (isset($_POST["submit"])) {
 
             </form>
             <br>
+
             <!-- batas padam jawapan pelajar -->
             <?php
             // ini fungsi delete
-            if (isset($_POST['padam'])) {
-                $IDPelajar = $_POST['IDPelajar'];
-                $q = "DELETE FROM kuiz WHERE IDPelajar = '$IDPelajar'";
-                mysqli_query($conn, $q);
-
-                if (mysqli_affected_rows($conn) > 0) {
+            if (isset($_POST["padam"])) {
+                //cek berjaya dipadam ke tak
+                if (padamJawapan($_POST) > 0) {
                     echo "
-         <script>
-         alert('Data berjaya dihapus !');
-         document.location.href = 'soalan_senarai.php';
-         </script>";
+                    <script>
+                    alert('data berjaya dipadam');
+                    document.location.href = 'soalan_senarai.php';
+                    </script>
+                    
+                    ";
                 } else {
                     echo "
-         <script>
-         alert('Data tidak berjaya dihapus !');
-         document.location.href = 'soalan_senarai.php';
-         </script>";
+                    <script>
+                    alert('data tidak berjaya dipadam');
+                    document.location.href = 'soalan_senarai.php';
+              
+                    </script>
+                    
+                    ";
                 }
-            }
-            ?>
+            } ?>
 
-            <h3 class="panjang">Padam Jawapan Pelajar</h3>
-            <form class="panjang" action="" method="POST">
-                <table>
-                    <tr>
-                        <td class="tak"> <label for="IDPelajar">ID Pelajar</label></td>
-                        <td class="tak"><input type="text" name="IDPelajar" id="IDPelajar"></label></td>
-                    </tr>
-                </table>
-                <button type="submit" class="padam" name="padam">Padam</button>
-            </form>
-        </center>
-    </div>
-    <?php include "footer.php" ?>
+            <div class="kandungan">
+                <h3 class="panjang">Padam Jawapan Pelajar</h3>
+                <!-- mula form -->
+                <form class="panjang" action="" method="POST">
+                    <!-- papar pilihan; js akan pilih ikut value -->
+                    <select name='pilihan' id='pilihan' onchange='padam_pilihan()'>
+                        <option value="1">Padam Semua Jawapan Pelajar</option>
+                        <option value="2">Padam Mengikut Kelas</option>
+                        <option value="3">Mengikut ID Pelajar</option>
+                    </select>
+
+                    <br>
+                    <div id="kelas" style="display: none;">
+                        <select name="IDKelas">
+                            <?php
+                            kelaslist()
+                            ?>
+                        </select>
+                    </div>
+
+                    <div id="pelajar" style="display: none;">
+                        <input type="text" placeholder="ID Pelajar" maxlength="4" name="IDPelajar">
+                    </div>
+                    <!-- batas ke butang -->
+                    <button class="padam" name="padam" type="submit" onclick="return confirm('Yakin hendak jawapa pelajar');">Padam</button>
+                </form>
+                <?php echo "<script src='js/laporan.js'></script>" ?>
+            </div>
+            <?php include "footer.php" ?>
 </body>
 
 </html>
