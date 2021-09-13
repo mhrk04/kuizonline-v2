@@ -164,7 +164,7 @@ if (isset($_POST["submit"])) {
                         <input type="text" placeholder="ID Pelajar" maxlength="4" name="IDPelajar">
                     </div>
                     <!-- batas ke butang -->
-                    <button class="padam" name="padam" type="submit" onclick="return confirm('Yakin hendak jawapa pelajar');">Padam</button>
+                    <button class="padam" name="padam" type="submit" onclick="return confirm('Yakin hendak padam jawapan pelajar');">Padam</button>
                 </form>
                 <?php echo "<script src='js/laporan.js'></script>" ?>
             </div>
