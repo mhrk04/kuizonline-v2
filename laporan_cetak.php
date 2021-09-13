@@ -12,7 +12,18 @@ include "css/senarai.php";
 include "css/button.php";
 ?>
 
+<head>
+    <style>
+        @media print {
 
+            .header,
+            .footer,
+            div.menu {
+                display: none;
+            }
+        }
+    </style>
+</head>
 
 
 <body>
