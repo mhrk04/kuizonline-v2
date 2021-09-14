@@ -35,6 +35,10 @@ include "css/button.php";
                 border: none;
                 box-shadow: none;
             }
+
+            div.kandungan {
+                overflow: visible;
+            }
         }
     </style>
 </head>
