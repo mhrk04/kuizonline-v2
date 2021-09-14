@@ -18,8 +18,22 @@ include "css/button.php";
 
             .header,
             .footer,
-            div.menu {
+            div.menu,
+            button.cetak {
                 display: none;
+            }
+
+            th {
+                color: black;
+            }
+
+            table {
+                margin: auto;
+            }
+
+            div.all {
+                border: none;
+                box-shadow: none;
             }
         }
     </style>
