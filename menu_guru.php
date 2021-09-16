@@ -1,5 +1,5 @@
 <?php
-// session_start();
+// session_start letak dekat setiap page so xyah ltak kat menu
 //cek guru or not
 if ($_SESSION['status'] != "guru") {
     header("Location: login.php");

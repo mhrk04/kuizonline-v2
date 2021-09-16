@@ -1,4 +1,5 @@
 <?php
+session_start();
 //tamabah header
 $title = "Home Pelajar";
 require "header.php";

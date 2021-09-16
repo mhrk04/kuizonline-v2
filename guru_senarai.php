@@ -1,4 +1,5 @@
 <?php
+session_start();
 $title = "Senarai Guru & Pelajar";
 require "header.php";
 require "menu_guru.php";

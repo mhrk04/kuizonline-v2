@@ -2,6 +2,7 @@
 //mula cek session
 session_start();
 require "functions.php";
+//cek dah ade session ke blum
 if (isset($_SESSION['guru'])) {
     header("Location: home_guru.php");
     exit;
@@ -87,17 +88,16 @@ if (isset($_POST['userid'])) {
 <body>
     <center>
         <h1>Selamat Datang ke Laman Kuiz Santai Sejarah</h1>
-        <!-- <img class="logo" src="css/img/mylogo.jpg" alt=""> -->
         <h3 class="pendek">Halaman Login</h3>
         <form action="" method="post" class="pendek">
             <table>
                 <tr>
                     <!-- <td><label for="userid">User ID</label></td> -->
-                    <td><img src="css/img/user.png" alt="user"> <input type="text" id="userid" name="userid" maxlength="4" placeholder="IDPengguna"></td>
+                    <td><img src="css/img/user.png" alt="user"> <input required type="text" id="userid" name="userid" maxlength="4" placeholder="IDPengguna"></td>
                 </tr>
                 <tr>
                     <!-- <td><label for="KataLaluan">KataLaluan</label></td> -->
-                    <td><img src="css/img/lock.png" alt=""> <input type="password" name="KataLaluan" maxlength="16" placeholder="KataLaluan" id="KataLaluan"></td>
+                    <td><img src="css/img/lock.png" alt=""> <input required type="password" name="KataLaluan" maxlength="16" placeholder="KataLaluan" id="KataLaluan"></td>
                 </tr>
                 <tr>
                     <td><input type="checkbox" onclick="showpass()">Papar KataLaluan

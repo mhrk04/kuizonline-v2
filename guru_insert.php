@@ -1,4 +1,5 @@
 <?php
+session_start();
 $title = "Tambah Guru";
 require "header.php";
 require "menu_guru.php";

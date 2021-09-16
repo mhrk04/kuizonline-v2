@@ -1,4 +1,5 @@
 <?php
+session_start();
 $title = "Mula Kuiz";
 require "header.php";
 require "menu_pelajar.php";

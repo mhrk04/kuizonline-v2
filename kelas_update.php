@@ -1,4 +1,5 @@
 <?php
+session_start();
 $title = "Kemaskini Kelas";
 require "header.php";
 require "menu_guru.php";

@@ -1,4 +1,5 @@
 <?php
+session_start();
 $title = "Import";
 require "header.php";
 require "menu_guru.php";
