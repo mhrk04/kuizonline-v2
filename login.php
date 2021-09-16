@@ -71,7 +71,7 @@ if (isset($_POST['userid'])) {
     <title>Login | Kuiz Santai Sejarah</title>
     <noscript>
         <h3> Anda mesti mengaktifkan JavaScript untuk menggunakan laman web ini. Sila aktifkan JavaScript dan kemudian muatkan semula halaman ini untuk meneruskan. </h3>
-        <!-- <meta HTTP-EQUIV="refresh" content=0;url="javascriptNotEnabled.php"> -->
+        <meta HTTP-EQUIV="refresh" content=0;url="js/javascriptNotEnabled.php">
     </noscript>
     <style>
         h1 {
