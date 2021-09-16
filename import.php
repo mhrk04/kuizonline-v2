@@ -29,7 +29,7 @@ if (isset($_POST['submit'])) {
         $Nama_Pelajar = $medan[1];
         $IDKelas = $medan[2];
         $KataLaluan = $medan[3];
-        $sql = "INSERT INTO pelajar VALUES ('$IDPelajar','$Nama_Pelajar','$IDKelas','$KataLaluan')";
+        $sql = "INSERT INTO pelajar VALUES ('$IDPelajar','$Nama_Pelajar','$IDKelas','$KataLaluan');";
         mysqli_query($conn, $sql);
         // if (mysqli_query($conn, $sql)) {
         //   $berjaya = true;
