@@ -69,6 +69,10 @@ if (isset($_POST['userid'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="css/img/mylogo.jpg" type="image/x-icon">
     <title>Login | Kuiz Santai Sejarah</title>
+    <noscript>
+        <h3> Anda mesti mengaktifkan JavaScript untuk menggunakan laman web ini. Sila aktifkan JavaScript dan kemudian muatkan semula halaman ini untuk meneruskan. </h3>
+        <!-- <meta HTTP-EQUIV="refresh" content=0;url="javascriptNotEnabled.php"> -->
+    </noscript>
     <style>
         h1 {
             font-size: 40px;
