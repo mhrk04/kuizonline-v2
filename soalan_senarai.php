@@ -79,23 +79,23 @@ if (isset($_POST["submit"])) {
                 <table>
                     <tr>
                         <td class="tak"><label for="IDSoalan">ID Soalan</label></td>
-                        <td class="tak"><input maxlength="4" type="text" name="IDSoalan" id="IDSoalan" placeholder="Max Char 4"></td>
+                        <td class="tak"><input required maxlength="4" type="text" name="IDSoalan" id="IDSoalan" placeholder="Max Char 4"></td>
                     </tr>
                     <tr>
                         <td class="tak"><label for="Nama_Soalan">Soalan</label></td>
-                        <td class="tak"><textarea type="text" name="Nama_Soalan" id="Nama_Soalan"></textarea></td>
+                        <td class="tak"><textarea required type="text" name="Nama_Soalan" id="Nama_Soalan"></textarea></td>
                     </tr>
                     <tr>
                         <td class="tak"><label for="Pilihan_A">Pilihan A</label></td>
-                        <td class="tak"><textarea type="text" name="Pilihan_A" id="Pilihan_A"></textarea></td>
+                        <td class="tak"><textarea required type="text" name="Pilihan_A" id="Pilihan_A"></textarea></td>
                     </tr>
                     <tr>
                         <td class="tak"><label for="Pilihan_B">Pilihan B</label></td>
-                        <td class="tak"><textarea type="text" name="Pilihan_B" id="Pilihan_B"></textarea></td>
+                        <td class="tak"><textarea required type="text" name="Pilihan_B" id="Pilihan_B"></textarea></td>
                     </tr>
                     <tr>
                         <td class="tak"><label for="Pilihan_C">Pilihan C</label></td>
-                        <td class="tak"><textarea type="text" name="Pilihan_C" id="Pilihan_C"></textarea></td>
+                        <td class="tak"><textarea required type="text" name="Pilihan_C" id="Pilihan_C"></textarea></td>
                     </tr>
                     <tr>
                         <td class="tak"><label for="Jawapan">Jawapan</label></td>
@@ -108,7 +108,7 @@ if (isset($_POST["submit"])) {
                     </tr>
                     <tr>
                         <td class="tak"><label for="IDGuru">ID Guru</label></td>
-                        <td class="tak"><input type="text" name="IDGuru" id="IDGuru" value="<?= $_SESSION['username'] ?>"></td>
+                        <td class="tak"><input required type="text" name="IDGuru" id="IDGuru" value="<?= $_SESSION['username'] ?>"></td>
                     </tr>
                 </table>
                 <button type="submit" class="tambah" name="submit">Tambah</button>

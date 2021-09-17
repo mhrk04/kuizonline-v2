@@ -13,6 +13,10 @@ require "functions.php";
 //query untuk senarai
 $guru = query("SELECT * FROM guru");
 $pelajar = query("SELECT * FROM pelajar");
+//search
+if (isset($_POST["cari"])) {
+    $pelajar = cari($_POST["keyword"]);
+}
 
 ?>
 
@@ -50,6 +54,13 @@ $pelajar = query("SELECT * FROM pelajar");
             <!-- INI batas ke senarai pelajar -->
 
             <h3>Senarai Pelajar</h3>
+            <form action="" method="post">
+
+                <input type="text" name="keyword" size="40" autofocus placeholder="masukkan keyword pencarian.." autocomplete="off">
+                <button type="submit" name="cari">Cari!</button>
+
+            </form>
+
             <table class="list">
                 <tr>
                     <th>Bil.</th>

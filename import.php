@@ -101,7 +101,7 @@ include "css/button.php";
         <tr>
           <td><label for="namafail">Fail</label></td>
           <td>
-            <input type="file" name="namafail" id="namafail" accept=".txt" />
+            <input required type="file" name="namafail" id="namafail" accept=".txt" />
           </td>
         </tr>
       </table>

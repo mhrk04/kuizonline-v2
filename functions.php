@@ -249,7 +249,8 @@ function cari($keyword)
     $query = "SELECT * FROM pelajar
                 WHERE
                 Nama_Pelajar LIKE '%$keyword%' OR 
-                IDPelajar LIKE '%$keyword%'
+                IDPelajar LIKE '%$keyword%' OR
+                IDKelas LIKE '%$keyword%';
                 ";
     return query($query);
 }
