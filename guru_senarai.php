@@ -54,38 +54,42 @@ if (isset($_POST["cari"])) {
             <!-- INI batas ke senarai pelajar -->
 
             <h3>Senarai Pelajar</h3>
+            <!-- tobol cari -->
             <form action="" method="post">
 
-                <input type="text" name="keyword" size="40" autofocus placeholder="masukkan keyword pencarian.." autocomplete="off">
-                <button type="submit" name="cari">Cari!</button>
+                <input type="text" name="keyword" size="40" autofocus placeholder="masukkan keyword pencarian.." autocomplete="off" id="keyword">
+                <button type="submit" name="cari" id="tombol-cari">Cari!</button>
 
             </form>
-
-            <table class="list">
-                <tr>
-                    <th>Bil.</th>
-                    <th>ID Pelajar</th>
-                    <th>Nama Pelajar</th>
-                    <th>ID Kelas</th>
-                    <th>Aksi</th>
-                </tr>
-                <?php $j = 1; ?>
-                <?php foreach ($pelajar as $pel) : ?>
-                    <tr class="list">
-                        <td><?= $j; ?></td>
-                        <td><?= $pel["IDPelajar"]; ?></td>
-                        <td><?= $pel["Nama_Pelajar"]; ?></td>
-                        <td><?= $pel["IDKelas"]; ?></td>
-                        <td>
-                            <a class="update" href="pelajar_update.php?id=<?= $pel['IDPelajar']; ?>">Ubah</a>
-                            <a class="padam" href="hapus.php?id=<?= $pel['IDPelajar']; ?>&table=pelajar&fill=IDPelajar" onclick="return confirm('Yakin hendak dipadam');">Padam</a>
-                        </td>
+            <!-- table pelajar -->
+            <div id="container">
+                <table class="list">
+                    <tr>
+                        <th>Bil.</th>
+                        <th>ID Pelajar</th>
+                        <th>Nama Pelajar</th>
+                        <th>ID Kelas</th>
+                        <th>Aksi</th>
                     </tr>
-                    <?php $j++; ?>
-                <?php endforeach; ?>
-            </table>
+                    <?php $j = 1; ?>
+                    <?php foreach ($pelajar as $pel) : ?>
+                        <tr class="list">
+                            <td><?= $j; ?></td>
+                            <td><?= $pel["IDPelajar"]; ?></td>
+                            <td><?= $pel["Nama_Pelajar"]; ?></td>
+                            <td><?= $pel["IDKelas"]; ?></td>
+                            <td>
+                                <a class="update" href="pelajar_update.php?id=<?= $pel['IDPelajar']; ?>">Ubah</a>
+                                <a class="padam" href="hapus.php?id=<?= $pel['IDPelajar']; ?>&table=pelajar&fill=IDPelajar" onclick="return confirm('Yakin hendak dipadam');">Padam</a>
+                            </td>
+                        </tr>
+                        <?php $j++; ?>
+                    <?php endforeach; ?>
+                </table>
+            </div>
         </center>
     </div>
+    <script src="js/ajax.js"></script>
 </body>
 
 </html>
