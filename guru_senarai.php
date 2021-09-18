@@ -20,6 +20,13 @@ if (isset($_POST["cari"])) {
 
 ?>
 
+<style>
+    #keyword {
+        border: 2px solid;
+        border-radius: 1.1rem;
+        height: auto;
+    }
+</style>
 
 <body>
     <div class="kandungan">
