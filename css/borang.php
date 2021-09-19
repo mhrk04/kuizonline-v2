@@ -65,4 +65,51 @@
   img.logo {
     width: 160px;
   }
+
+  @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+  .input-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border: 1px solid #aaa;
+    border-radius: 20px;
+    background-color: white;
+    margin: 3%;
+  }
+
+  .input-container-user {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border: 1px solid #aaa;
+    border-radius: 20px;
+    background-color: white;
+    margin: 3%;
+  }
+
+  .input-container-user input {
+    padding: 10px;
+    width: 100%;
+    font-size: 16px;
+    border: 0;
+    outline: none;
+    color: #333;
+  }
+
+
+  .input-container input {
+    padding: 10px;
+    width: 100%;
+    font-size: 16px;
+    border: 0;
+    outline: none;
+    color: #333;
+  }
+
+  i {
+    margin: 0 10px;
+    color: #aaa;
+    cursor: default;
+  }
 </style>

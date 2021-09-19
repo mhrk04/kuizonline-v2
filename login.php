@@ -71,6 +71,7 @@ if (isset($_POST['login'])) {
     <meta name="keywords" content="@mhaziqrk kuiz website">
     <meta name="author" content="Mhaziq Rohaizan">
     <link rel="shortcut icon" href="css/img/mylogo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <title>Login | Kuiz Santai Sejarah</title>
     <noscript>
         <h3> Anda mesti mengaktifkan JavaScript untuk menggunakan laman web ini. Sila aktifkan JavaScript dan kemudian muatkan semula halaman ini untuk meneruskan. </h3>
@@ -99,15 +100,19 @@ if (isset($_POST['login'])) {
         <form action="" method="post" class="pendek">
             <table>
                 <tr>
-                    <!-- <td><label for="userid">User ID</label></td> -->
-                    <td><img src="css/img/user.png" alt="user"> <input required type="text" id="userid" name="userid" maxlength="4" placeholder="IDPengguna" autofocus></td>
+                    <td>
+                        <div class="input-container-user">
+                            <img src="css/img/user.png" alt="user"> <input required type="text" id="userid" name="userid" maxlength="4" placeholder="IDPengguna" autofocus>
+                        </div>
+                    </td>
                 </tr>
                 <tr>
-                    <!-- <td><label for="KataLaluan">KataLaluan</label></td> -->
-                    <td><img src="css/img/lock.png" alt=""> <input required type="password" name="KataLaluan" maxlength="16" placeholder="KataLaluan" id="KataLaluan"></td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox" onclick="showpass()">Papar KataLaluan
+                    <td>
+                        <div class="input-container">
+                            <img src="css/img/lock.png" alt="">
+                            <input required class="pass" type="password" name="KataLaluan" maxlength="16" placeholder="KataLaluan" id="KataLaluan">
+                            <i class="material-icons visibility">visibility_off</i>
+                        </div>
                     </td>
                 </tr>
             </table>
@@ -117,7 +122,7 @@ if (isset($_POST['login'])) {
         <br>
         <!-- <p>Pastikan anda tidak menyekat fungsi javascript. <br>Website ini berjalan dengan optimal apabila dijalankan pada pelayar di desktop.</p> -->
     </center>
-    <script src="js/laporan.js"></script>
+    <script src="js/script.js"></script>
 </body>
 <footer>
     <?php
