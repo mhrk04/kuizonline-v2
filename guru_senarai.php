@@ -32,7 +32,7 @@ if (isset($_POST["cari"])) {
     <div class="kandungan">
         <center>
             <br>
-            <h3>Senarai Guru</h3>
+            <h2>Senarai Guru</h2>
             <br>
             <table class="list">
                 <tr>
@@ -60,7 +60,7 @@ if (isset($_POST["cari"])) {
 
             <!-- INI batas ke senarai pelajar -->
 
-            <h3>Senarai Pelajar</h3>
+            <h2>Senarai Pelajar</h2>
             <!-- tobol cari -->
             <form action="" method="post">
 
