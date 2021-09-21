@@ -102,14 +102,15 @@ if (isset($_POST['login'])) {
                 <tr>
                     <td>
                         <div class="input-container-user">
-                            <img src="css/img/user.png" alt="user"> <input required type="text" id="userid" name="userid" maxlength="4" placeholder="IDPengguna" autofocus>
+                            <label title="ID" for="userid"><img src="css/img/user.png" alt="user"></label>
+                            <input required type="text" id="userid" name="userid" maxlength="4" placeholder="IDPengguna" autofocus>
                         </div>
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <div class="input-container">
-                            <img src="css/img/lock.png" alt="">
+                            <label title="KataLaluan" for="KataLaluan"><img src="css/img/lock.png" alt=""></label>
                             <input required class="pass" type="password" name="KataLaluan" maxlength="16" placeholder="KataLaluan" id="KataLaluan">
                             <i class="material-icons visibility">visibility_off</i>
                         </div>

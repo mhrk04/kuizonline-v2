@@ -41,7 +41,7 @@
   /* body {
     /* background-color: black; */
   body {
-    background-color: rgb(121, 148, 238);
+    background-image: linear-gradient(to bottom right, blue, purple);
   }
 
   div.all {
