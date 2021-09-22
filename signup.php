@@ -25,6 +25,8 @@ if (isset($_POST["signup"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="css/img/mylogo.jpg" type="image/x-icon">
     <title>Sign Up</title>
+    <script src="https://use.fontawesome.com/6154921c1c.js"></script>
+
 
 </head>
 
@@ -57,8 +59,10 @@ if (isset($_POST["signup"])) {
                     <td><input type="password" maxlength="16" name="KataLaluan2" id="KataLaluan2"></td>
                 </tr>
             </table>
-            <button type="submit" class="signup" name="signup">Daftar</button>
-            <button type="button" class="padam" onclick="window.location='login.php'">Batal</button>
+            <button type="submit" class="signup" name="signup"><i class="fa fa-user-plus" aria-hidden="true"></i>
+                Daftar</button>
+            <button type="button" class="padam" onclick="window.location='login.php'"><i class="fa fa-ban" aria-hidden="true"></i>
+                Batal</button>
         </form>
     </center>
     <?php

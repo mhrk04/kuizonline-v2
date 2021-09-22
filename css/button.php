@@ -11,17 +11,17 @@
     border: 1px solid darkolivegreen;
     border-radius: 7px;
     margin-top: 10px;
-    background-color: burlywood;
+    background-color: white;
     background-position: 8px;
     background-repeat: no-repeat;
   }
 
-  button.login {
-    background: url('css/img/signin.png') no-repeat;
+  button.login:hover {
+    background-color: yellowgreen;
   }
 
-  button.signup {
-    background: url('css/img/signup.png') no-repeat;
+  button.signup:hover {
+    background-color: yellowgreen;
   }
 
   button.tambah {
@@ -32,9 +32,9 @@
     background-image: url(/img/save.png);
   }
 
-  button.padam {
+  /* button.padam {
     background: url('css/img/delet.png')no-repeat;
-  }
+  } */
 
   button.padam:hover {
     background-color: crimson;

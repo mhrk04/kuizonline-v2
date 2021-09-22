@@ -31,6 +31,9 @@
 
   ul li:hover {
     background-color: tomato;
+    -ms-transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+    transform: scale(1.2);
   }
 
   a.logout {

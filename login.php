@@ -91,6 +91,8 @@ if (isset($_POST['login'])) {
             background-color: salmon;
         } */
     </style>
+    <script src="https://use.fontawesome.com/6154921c1c.js"></script>
+
 </head>
 
 <body>
@@ -117,8 +119,10 @@ if (isset($_POST['login'])) {
                     </td>
                 </tr>
             </table>
-            <button type="submit" class="login" name="login">Login</button>
-            <button type="button" class="signup" onclick="window.location='signup.php'">Sign Up</button>
+            <button type="submit" class="login" name="login"><i class="fa fa-sign-in" aria-hidden="true"></i>
+                Login</button>
+            <button type="button" class="signup" onclick="window.location='signup.php'"><i class="fa fa-user-plus" aria-hidden="true"></i>
+                Sign Up</button>
         </form>
         <br>
         <!-- <p>Pastikan anda tidak menyekat fungsi javascript. <br>Website ini berjalan dengan optimal apabila dijalankan pada pelayar di desktop.</p> -->
