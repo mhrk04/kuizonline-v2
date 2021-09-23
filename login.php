@@ -78,18 +78,9 @@ if (isset($_POST['login'])) {
         <meta HTTP-EQUIV="refresh" content=0;url="js/javascriptNotEnabled.php">
     </noscript>
     <style>
-        h1 {
-            font-size: 40px;
-            text-decoration: teal;
+        h3.pendek {
+            margin-top: 0;
         }
-
-        /* p {
-            border: 2px dotted red;
-            margin: auto;
-            display: block;
-            border-radius: 1.15rem;
-            background-color: salmon;
-        } */
     </style>
     <script src="https://use.fontawesome.com/6154921c1c.js"></script>
 
@@ -97,7 +88,19 @@ if (isset($_POST['login'])) {
 
 <body>
     <center>
-        <h1>Selamat Datang ke Laman Kuiz Santai Sejarah</h1>
+        <!-- start animasi -->
+        <?php include "css/animation.php" ?>
+        <div class="wrapper">
+            <div class="laptop">
+                <div class="screen">
+                    <div class="wallpaper">
+                        <div class="terminal"></div>
+                    </div>
+                </div>
+                <div class="keyboard"></div>
+            </div>
+        </div>
+        <!-- batas animasi -->
         <h3 class="pendek">Halaman Login</h3>
         <form action="" method="post" class="pendek">
             <table>
