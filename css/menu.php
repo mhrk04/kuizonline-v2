@@ -41,10 +41,8 @@
     margin-top: 10px;
   }
 
-  /* body {
-    /* background-color: black; */
   body {
-    background-image: linear-gradient(to bottom right, blue, purple);
+    background-image: linear-gradient(to right, rgb(0, 204, 255, 1), rgba(102, 0, 255, 1))
   }
 
   div.all {

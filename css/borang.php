@@ -40,7 +40,7 @@
   /*borang selain login*/
   form.panjang,
   h3.panjang {
-    width: 330px;
+    width: 300px;
     margin: 0px auto;
   }
 
@@ -59,7 +59,7 @@
   }
 
   body {
-    background-image: linear-gradient(to bottom right, blue, purple);
+    background-image: linear-gradient(to right, rgb(0, 204, 255, 1), rgba(102, 0, 255, 1))
   }
 
   img.logo {
