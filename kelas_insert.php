@@ -60,7 +60,7 @@ if (isset($_POST["submit"])) {
                     <td><?= $row["Nama_Kelas"]; ?></td>
                     <td>
                         <a class="update" href="kelas_update.php?IDKelas=<?= $row['IDKelas']; ?>">Ubah</a>
-                        <a class="padam" href="hapus.php?id=<?= $row['IDKelas']; ?>&table=kelas&fill=IDKelas" onclick="return confirm('Yakin hendak dipadam');">Padam</a>
+                        <a class="padam" href="./include/hapus.php?id=<?= $row['IDKelas']; ?>&table=kelas&fill=IDKelas" onclick="return confirm('Yakin hendak dipadam');">Padam</a>
                     </td>
                 </tr>
                 <?php $i++; ?>
