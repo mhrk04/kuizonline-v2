@@ -2,7 +2,6 @@
 session_start();
 $title = "Senarai Guru & Pelajar";
 require "header.php";
-require "menu_guru.php";
 include "css/senarai.php";
 //cek session
 if ($_SESSION['status'] != "guru") {
@@ -29,6 +28,7 @@ if (isset($_POST["cari"])) {
 </style>
 
 <body>
+    <?php include "./include/menu.php" ?>
     <div class="kandungan">
         <center>
             <br>
@@ -51,7 +51,7 @@ if (isset($_POST["cari"])) {
                         <!-- <td> //$row["KataLaluan"]; </td>             -->
                         <td>
                             <a class="update" href="guru_update.php?id=<?= $row['IDGuru']; ?>">Ubah</a>
-                            <a class="padam" href="hapus.php?id=<?= $row['IDGuru']; ?>&table=guru&fill=IDGuru" onclick="return confirm('Yakin hendak dipadam');">Padam</a>
+                            <a class="padam" href="./include/hapus.php?id=<?= $row['IDGuru']; ?>&table=guru&fill=IDGuru" onclick="return confirm('Yakin hendak dipadam');">Padam</a>
                         </td>
                     </tr>
                     <?php $i++; ?>
@@ -87,7 +87,7 @@ if (isset($_POST["cari"])) {
                             <td><?= $pel["IDKelas"]; ?></td>
                             <td>
                                 <a class="update" href="pelajar_update.php?id=<?= $pel['IDPelajar']; ?>">Ubah</a>
-                                <a class="padam" href="hapus.php?id=<?= $pel['IDPelajar']; ?>&table=pelajar&fill=IDPelajar" onclick="return confirm('Yakin hendak dipadam');">Padam</a>
+                                <a class="padam" href="./include/hapus.php?id=<?= $pel['IDPelajar']; ?>&table=pelajar&fill=IDPelajar" onclick="return confirm('Yakin hendak dipadam');">Padam</a>
                             </td>
                         </tr>
                         <?php $j++; ?>

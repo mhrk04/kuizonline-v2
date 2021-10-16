@@ -2,7 +2,6 @@
 session_start();
 $title = "Kemaskini Pelajar";
 require "header.php";
-require "menu_guru.php";
 include "css/borang.php";
 include "css/button.php";
 if ($_SESSION['status'] != "guru") {
@@ -47,6 +46,7 @@ if (isset($_POST["submit"])) {
 </style>
 
 <body>
+    <?php include "./include/menu.php" ?>
     <div class="kandungan">
         <h3 class="panjang">Kemaskini Data Pelajar</h3>
         <form class="panjang" action="" method="post">

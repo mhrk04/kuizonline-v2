@@ -2,7 +2,6 @@
 session_start();
 $title = "Mula Kuiz";
 require "header.php";
-require "menu_pelajar.php";
 if ($_SESSION['status'] != "pelajar") {
     header("Location: login.php");
     exit;
@@ -46,6 +45,7 @@ include "css/button.php";
 
 
 <body>
+    <?php include "./include/menu.php" ?>
     <center>
         <div class="kandungan">
             <form action="" method="POST">

@@ -2,7 +2,6 @@
 session_start();
 $title = "Kemaskini Guru";
 require "header.php";
-require "menu_guru.php";
 include "css/button.php";
 if ($_SESSION['status'] != "guru") {
     header("Location: login.php");
@@ -45,6 +44,7 @@ include "css/borang.php";
 </head>
 
 <body>
+    <?php include "./include/menu.php" ?>
     <div class="kandungan">
         <center>
             <h3 class="panjang">Kemaskini Data Guru</h3>

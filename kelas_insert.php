@@ -2,7 +2,6 @@
 session_start();
 $title = "Kelas";
 require "header.php";
-require "menu_guru.php";
 if ($_SESSION['status'] != "guru") {
     header("Location: login.php");
     exit;
@@ -42,6 +41,7 @@ if (isset($_POST["submit"])) {
 </style>
 
 <body>
+    <?php include "./include/menu.php" ?>
     <div class="kandungan">
         <h2>Senarai Kelas</h2>
         <br>
@@ -60,7 +60,7 @@ if (isset($_POST["submit"])) {
                     <td><?= $row["Nama_Kelas"]; ?></td>
                     <td>
                         <a class="update" href="kelas_update.php?IDKelas=<?= $row['IDKelas']; ?>">Ubah</a>
-                        <a class="padam" href="hapus.php?id=<?= $row['IDKelas']; ?>&table=kelas&fill=IDKelas" onclick="return confirm('Yakin hendak dipadam');">Padam</a>
+                        <a class="padam" href="./include/hapus.php?id=<?= $row['IDKelas']; ?>&table=kelas&fill=IDKelas" onclick="return confirm('Yakin hendak dipadam');">Padam</a>
                     </td>
                 </tr>
                 <?php $i++; ?>

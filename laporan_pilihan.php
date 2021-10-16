@@ -2,7 +2,6 @@
 session_start();
 $title = "Laporan";
 require "header.php";
-require "menu_guru.php";
 if ($_SESSION['status'] != "guru") {
     header("Location: login.php");
     exit;
@@ -13,6 +12,7 @@ include "css/borang.php";
 ?>
 
 <body>
+    <?php include "./include/menu.php" ?>
     <div class="kandungan">
         <h3 class="panjang">PILIHAN JENIS LAPORAN</h3>
         <form class="panjang" action="laporan_cetak.php" method="POST">

@@ -2,7 +2,6 @@
 session_start();
 $title = "Laporan";
 require "header.php";
-require "menu_pelajar.php";
 include "css/senarai.php";
 include "css/button.php";
 if ($_SESSION['status'] != "pelajar") {
@@ -25,6 +24,7 @@ if (mysqli_num_rows($data) == 0) {
 ?>
 
 <body>
+  <?php include "./include/menu.php" ?>
   <div class="kandungan">
     <table class="list">
       <caption>SKEMA DAN KEPUTUSAN</caption>

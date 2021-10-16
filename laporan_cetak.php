@@ -7,7 +7,6 @@ if ($_SESSION['status'] != "guru") {
 }
 require "functions.php";
 require "header.php";
-require "menu_guru.php";
 include "css/senarai.php";
 include "css/button.php";
 ?>
@@ -45,6 +44,7 @@ include "css/button.php";
 
 
 <body>
+    <?php include "./include/menu.php" ?>
     <div class="kandungan">
         <table class="list">
             <tr>
