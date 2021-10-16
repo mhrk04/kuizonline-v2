@@ -2,7 +2,6 @@
 session_start();
 $title = "Import";
 require "header.php";
-require "menu_guru.php";
 //session
 if ($_SESSION['status'] != "guru") {
   header("Location: login.php");
@@ -85,6 +84,7 @@ include "css/button.php";
 
 
 <body>
+  <?php include "./include/menu.php" ?>
   <div class="kandungan">
     <h3 class="pendek">Import Data</h3>
     <form class="pendek" action="" method="POST" enctype="multipart/form-data">

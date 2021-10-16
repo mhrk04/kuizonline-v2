@@ -2,7 +2,6 @@
 session_start();
 $title = "Senarai Guru & Pelajar";
 require "header.php";
-require "menu_guru.php";
 include "css/senarai.php";
 //cek session
 if ($_SESSION['status'] != "guru") {
@@ -29,6 +28,7 @@ if (isset($_POST["cari"])) {
 </style>
 
 <body>
+    <?php include "./include/menu.php" ?>
     <div class="kandungan">
         <center>
             <br>

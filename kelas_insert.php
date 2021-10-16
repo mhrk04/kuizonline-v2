@@ -2,7 +2,6 @@
 session_start();
 $title = "Kelas";
 require "header.php";
-require "menu_guru.php";
 if ($_SESSION['status'] != "guru") {
     header("Location: login.php");
     exit;
@@ -42,6 +41,7 @@ if (isset($_POST["submit"])) {
 </style>
 
 <body>
+    <?php include "./include/menu.php" ?>
     <div class="kandungan">
         <h2>Senarai Kelas</h2>
         <br>

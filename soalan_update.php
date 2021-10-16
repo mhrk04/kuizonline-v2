@@ -2,7 +2,6 @@
 session_start();
 $title = "Kemaskini Soalan";
 require "header.php";
-require "menu_guru.php";
 if ($_SESSION['status'] != "guru") {
     header("Location: login.php");
     exit;
@@ -39,6 +38,7 @@ if (isset($_POST["submit"])) {
 
 
 <body>
+    <?php include "./include/menu.php" ?>
     <div class="kandungan">
         <center>
             <h3 class="panjang">Kemaskini Soalan</h3>

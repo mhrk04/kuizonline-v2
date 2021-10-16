@@ -2,7 +2,6 @@
 session_start();
 $title = "Tambah Pelajar";
 require "header.php";
-require "menu_guru.php";
 include "css/borang.php";
 include "css/button.php";
 
@@ -48,6 +47,7 @@ if (isset($_POST["submit"])) {
 </head>
 
 <body>
+    <?php include "./include/menu.php" ?>
     <div class="kandungan">
         <h3 class="panjang">Tambah Pelajar</h3>
         <form class="panjang" action="" method="post">
