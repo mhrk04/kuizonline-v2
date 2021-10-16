@@ -33,7 +33,7 @@ $pelajar = query($query);
       <td><?= $pel["IDKelas"]; ?></td>
       <td>
         <a class="update" href="pelajar_update.php?id=<?= $pel['IDPelajar']; ?>">Ubah</a>
-        <a class="padam" href="hapus.php?id=<?= $pel['IDPelajar']; ?>&table=pelajar&fill=IDPelajar" onclick="return confirm('Yakin hendak dipadam');">Padam</a>
+        <a class="padam" href="include/hapus.php?id=<?= $pel['IDPelajar']; ?>&table=pelajar&fill=IDPelajar" onclick="return confirm('Yakin hendak dipadam');">Padam</a>
       </td>
     </tr>
     <?php $j++; ?>
