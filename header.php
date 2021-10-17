@@ -34,4 +34,4 @@ include "css/menu.php";
   <div class="header">
     <h1 class="header">KUIZ SANTAI SEJARAH </h1>
   </div>
-  <?php include "footer.php" ?>
+  <?php include "./include/footer.php" ?>

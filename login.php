@@ -128,7 +128,7 @@ if (isset($_POST['login'])) {
 </body>
 <footer>
     <?php
-    include "footer.php";
+    include "./include/footer.php";
     ?></footer>
 
 </html>

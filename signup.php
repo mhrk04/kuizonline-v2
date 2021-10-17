@@ -66,7 +66,7 @@ if (isset($_POST["signup"])) {
         </form>
     </center>
     <?php
-    include "footer.php"
+    include "./include/footer.php"
     ?>
 </body>
 
