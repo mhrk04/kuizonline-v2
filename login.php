@@ -3,11 +3,8 @@
 session_start();
 require "functions.php";
 //cek dah ade session ke blum
-if (isset($_SESSION['guru'])) {
-    header("Location: home_guru.php");
-    exit;
-} elseif (isset($_SESSION['pelajar'])) {
-    header("Location: home_pelajar.php");
+if (isset($_SESSION['username'])) {
+    header("Location: home.php");
     exit;
 }
 //tamat cek session
@@ -47,11 +44,8 @@ if (isset($_POST['login'])) {
         }
     }
     if ($jumpa == TRUE) {
-        if ($_SESSION["status"] == "guru") {
-            header("Location: home_guru.php");
-        } else {
-            header("Location: home_pelajar.php");
-        }
+        header("Location: home.php");
+        exit;
     } else
         echo "<script>alert('kesalahan pada username atau katalaluan');window.location='login.php'</script>";
 }

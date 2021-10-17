@@ -12,9 +12,9 @@ if ($_SESSION['status'] == "guru") { ?>
     <h3 class="menu">Menu Utama</h3>
     <h2 class="nama"><?= $_SESSION['nama']; ?></h2>
     <ul>
-      <li><a class="<?php if ($title == 'Home Guru') {
+      <li><a class="<?php if ($title == 'Home') {
                       echo 'aktif';
-                    } ?>" href="home_guru.php">Home</a></li>
+                    } ?>" href="home.php">Home</a></li>
 
       <li><a class="<?php if ($title == 'Soalan' || $title == 'Kemaskini Soalan') {
                       echo 'aktif';
@@ -50,9 +50,9 @@ if ($_SESSION['status'] == "guru") { ?>
     <h2 class="nama"><?= $_SESSION['nama']; ?></h2>
     <div class="menu-area">
       <ul>
-        <li><a class="<?php if ($title == 'Home Pelajar') {
+        <li><a class="<?php if ($title == 'Home') {
                         echo 'aktif';
-                      } ?>" href="home_pelajar.php">Home</a></li>
+                      } ?>" href="home.php">Home</a></li>
         <li><a class="<?php if ($title == 'Mula Kuiz') {
                         echo 'aktif';
                       } ?>" href="jawab_soalan.php">Mula Kuiz</a></li>
