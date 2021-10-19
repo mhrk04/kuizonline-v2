@@ -1,5 +1,9 @@
 <?php
 session_start();
+if ($_GET == false) {
+    header("Location: ../login.php");
+    exit;
+}
 if ($_SESSION['status'] != "guru") {
     header("Location: ../login.php");
     exit;
