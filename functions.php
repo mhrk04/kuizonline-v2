@@ -324,3 +324,14 @@ function padamJawapan($data)
     mysqli_query($conn, $sql);
     return mysqli_affected_rows($conn);
 }
+
+// fungsi kira senarai
+function kiraBaris($table)
+{
+    global $conn;
+    $result = mysqli_query($conn, "SELECT COUNT(*) FROM $table;
+    ");
+    $row = mysqli_fetch_array($result);
+    $total = $row[0];
+    echo $total;
+}

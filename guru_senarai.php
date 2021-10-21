@@ -69,6 +69,8 @@ if (isset($_POST["cari"])) {
 
             </form>
             <!-- table pelajar -->
+            <?php $table = 'pelajar' ?>
+            <h3>Jumlah pelajar semasa : <?php kiraBaris('pelajar') ?></h3>
             <div id="container">
                 <table class="list">
                     <tr>
