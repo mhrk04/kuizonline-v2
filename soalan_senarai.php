@@ -174,7 +174,6 @@ if (isset($_POST["submit"])) {
             </form>
             <?php echo "<script src='js/laporan.js'></script>" ?>
     </div>
-    <?php include "footer.php" ?>
     <script src="https://use.fontawesome.com/6154921c1c.js"></script>
 
 </body>
