@@ -1,14 +1,12 @@
 <?php
 session_start();
+require "functions.php";
+sec("guru");
+
 $title = "Senarai Guru & Pelajar";
 require "header.php";
 include "css/senarai.php";
-//cek session
-if ($_SESSION['status'] != "guru") {
-    header("Location: login.php");
-    exit;
-}
-require "functions.php";
+
 //query untuk senarai
 $guru = query("SELECT * FROM guru");
 $pelajar = query("SELECT * FROM pelajar");

@@ -1,15 +1,14 @@
 <?php
 session_start();
+require "functions.php";
+// function cek session dh ade lom
+
+sec("guru");
+
 $title = "Tambah Guru";
 require "header.php";
 include "css/borang.php";
 include "css/button.php";
-
-if ($_SESSION['status'] != "guru") {
-    header("Location: login.php");
-    exit;
-}
-require "functions.php";
 
 if (isset($_POST["submit"])) {
     //cek berjaya di tambah ke tak

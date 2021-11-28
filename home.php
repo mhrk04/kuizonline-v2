@@ -15,6 +15,11 @@ require "./header.php";
   <?php include "./include/menu.php" ?>
   <div class="kandungan">
     <div class="cen"><img src="css/img/mylogo.jpg" alt="logo"></div>
-    <h1>Selamat Datang <?= $_SESSION['nama']; ?> </h1>
+    <?php
+    if ($_SESSION['status'] == "guru") { ?>
+      <h1>Selamat Datang Cikgu <?= $_SESSION['nama']; ?> </h1>
+    <?php } else { ?>
+      <h1>Selamat Datang <?= $_SESSION['nama']; ?> </h1>
+    <?php } ?>
   </div>
 </body>

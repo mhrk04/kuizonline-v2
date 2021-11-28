@@ -335,3 +335,11 @@ function kiraBaris($table)
     $total = $row[0];
     echo $total;
 }
+
+function sec($aras)
+{
+    if ($_SESSION['status'] != $aras) {
+        header("Location: login.php");
+        exit;
+    }
+}

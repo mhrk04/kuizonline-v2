@@ -1,13 +1,10 @@
 <?php
 session_start();
+require "functions.php";
+sec("guru");
 $title = "Kemaskini Guru";
 require "header.php";
 include "css/button.php";
-if ($_SESSION['status'] != "guru") {
-    header("Location: login.php");
-    exit;
-}
-require "functions.php";
 
 $id = $_GET["id"];
 $guru = query("SELECT * FROM guru WHERE IDGuru = '$id'")[0];
