@@ -1,15 +1,11 @@
 <?php
 session_start();
+require "functions.php";
+sec("guru");
 $title = "Tambah Pelajar";
 require "header.php";
 include "css/borang.php";
 include "css/button.php";
-
-if ($_SESSION['status'] != "guru") {
-    header("Location: login.php");
-    exit;
-}
-require "functions.php";
 
 // cek bile tekan butang tambah
 if (isset($_POST["submit"])) {

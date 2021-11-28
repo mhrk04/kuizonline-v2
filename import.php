@@ -1,14 +1,9 @@
 <?php
 session_start();
+require "functions.php";
+sec("guru");
 $title = "Import";
 require "header.php";
-//session
-if ($_SESSION['status'] != "guru") {
-  header("Location: login.php");
-  exit;
-}
-
-require "functions.php";
 
 if (isset($_POST['submit'])) {
 

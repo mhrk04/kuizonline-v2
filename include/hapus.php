@@ -1,5 +1,7 @@
 <?php
 session_start();
+require "../functions.php";
+
 if ($_GET == false) {
     header("Location: ../login.php");
     exit;
@@ -8,7 +10,6 @@ if ($_SESSION['status'] != "guru") {
     header("Location: ../login.php");
     exit;
 }
-require "../functions.php";
 
 
 $id = $_GET["id"];

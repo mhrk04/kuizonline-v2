@@ -1,12 +1,10 @@
 <?php
 session_start();
+require "functions.php";
+sec("guru");
 $title = "Soalan";
 require "header.php";
-if ($_SESSION['status'] != "guru") {
-    header("Location: login.php");
-    exit;
-}
-require "functions.php";
+
 include "css/senarai.php";
 include "css/button.php";
 $soalan = query("SELECT * FROM soalan");

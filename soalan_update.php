@@ -1,12 +1,9 @@
 <?php
 session_start();
+require "functions.php";
+sec("guru");
 $title = "Kemaskini Soalan";
 require "header.php";
-if ($_SESSION['status'] != "guru") {
-    header("Location: login.php");
-    exit;
-}
-require "functions.php";
 include "css/borang.php";
 include "css/button.php";
 $id = $_GET["id"];

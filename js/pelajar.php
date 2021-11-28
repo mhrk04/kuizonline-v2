@@ -1,11 +1,7 @@
 <?php
 session_start();
-if ($_SESSION['status'] != "guru") {
-  header("Location: ../login.php");
-  exit;
-}
 require "../functions.php";
-
+sec("guru");
 $keyword = $_GET['keyword'];
 $query = "SELECT * FROM pelajar WHERE
 Nama_Pelajar LIKE '%$keyword%' OR 

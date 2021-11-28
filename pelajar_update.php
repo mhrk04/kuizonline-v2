@@ -1,14 +1,12 @@
 <?php
 session_start();
+require "functions.php";
+sec("guru");
 $title = "Kemaskini Pelajar";
 require "header.php";
 include "css/borang.php";
 include "css/button.php";
-if ($_SESSION['status'] != "guru") {
-    header("Location: login.php");
-    exit;
-}
-require "functions.php";
+
 
 //ambil id di url
 $id = $_GET["id"];
