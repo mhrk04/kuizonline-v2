@@ -25,11 +25,6 @@ if (isset($_POST['submit'])) {
         $KataLaluan = $medan[3];
         $sql = "INSERT INTO pelajar VALUES ('$IDPelajar','$Nama_Pelajar','$IDKelas','$KataLaluan');";
         mysqli_query($conn, $sql);
-        // if (mysqli_query($conn, $sql)) {
-        //   $berjaya = true;
-        // } else {
-        //   $berjaya = false;
-        // }
       }
       if ($namajadual == "soalan") {
         $IDSoalan = $medan[0];
@@ -41,11 +36,6 @@ if (isset($_POST['submit'])) {
         $IDGuru = $medan[6];
         $sql = "INSERT INTO soalan VALUES ('$IDSoalan','$soalan','$piliha','$pilihb','$pilihc','$jawapan','$IDGuru')";
         mysqli_query($conn, $sql);
-        // if (mysqli_query($conn, $sql)) {
-        //   $berjaya = true;
-        // } else {
-        //   $berjaya = false;
-        // }
       }
     }
     if (mysqli_affected_rows($conn) !== 0) {
@@ -96,7 +86,7 @@ include "css/button.php";
         <tr>
           <td><label for="namafail">Fail</label></td>
           <td>
-            <input required type="file" name="namafail" id="namafail" accept=".txt" />
+            <input required type="file" name="namafail" id="namafail" accept="" />
           </td>
         </tr>
       </table>
