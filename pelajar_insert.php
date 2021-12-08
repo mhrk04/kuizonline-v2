@@ -67,7 +67,7 @@ if (isset($_POST["submit"])) {
                 </tr>
                 <tr>
                     <td><label for="KataLaluan">KataLaluan : </label></td>
-                    <td><input required type="password" id="KataLaluan" name="KataLaluan"></td>
+                    <td><input required type="password" id="KataLaluan" name="KataLaluan" maxlength="16"></td>
                 </tr>
             </table>
             <button class="tambah" type="submit" name="submit">Tambah</button>
