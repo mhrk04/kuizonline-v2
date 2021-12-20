@@ -7,7 +7,7 @@ require "header.php";
 
 if (isset($_POST['submit'])) {
   $filename = $_FILES['namafail']['tmp_name'];
-
+  // CEK FILE DI UPLOAD KE X
   if ($_FILES['namafail']['size'] > 0) {
     $file = fopen($filename, "r");
     while (($medan = fgetcsv($file, 0, ",")) !== false) {
@@ -15,6 +15,7 @@ if (isset($_POST['submit'])) {
         $import = "INSERT INTO pelajar VALUES ('" . $medan[0] . "','" . $medan[1] . "','" . $medan[2] . "','" . $medan[3] . "')";
         $tambah = mysqli_query($conn, $import);
       } elseif ($_POST['namatable'] == "soalan") {
+        // ELAKKAN WARNING UNDEFINE ARRAY BILA SALAH MASUKKAN DATA DALAM TABLE
         $C = $medan[4] ?? null;
         $jaw = $medan[5] ?? null;
         $idg = $medan[6] ?? null;
