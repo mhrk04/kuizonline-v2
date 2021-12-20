@@ -1,14 +1,12 @@
 <?php
 session_start();
+require "functions.php";
+sec("guru");
+
 $title = "Senarai Guru & Pelajar";
 require "header.php";
 include "css/senarai.php";
-//cek session
-if ($_SESSION['status'] != "guru") {
-    header("Location: login.php");
-    exit;
-}
-require "functions.php";
+
 //query untuk senarai
 $guru = query("SELECT * FROM guru");
 $pelajar = query("SELECT * FROM pelajar");
@@ -69,6 +67,8 @@ if (isset($_POST["cari"])) {
 
             </form>
             <!-- table pelajar -->
+            <?php $table = 'pelajar' ?>
+            <h3>Jumlah pelajar semasa : <?php kiraBaris('pelajar') ?></h3>
             <div id="container">
                 <table class="list">
                     <tr>

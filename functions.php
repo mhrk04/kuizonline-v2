@@ -1,6 +1,6 @@
 <?php
 // sambung ke database
-$conn = mysqli_connect("localhost", "root", "12345678", "kuizonline");
+$conn = mysqli_connect("localhost", "root", "", "kuizonline");
 
 //function mengquery database
 function query($query)
@@ -22,6 +22,20 @@ function tambah($data)
     $Nama_Pelajar = htmlspecialchars($data["Nama_Pelajar"]);
     $IDKelas = htmlspecialchars($data["IDKelas"]);
     $KataLaluan = htmlspecialchars($data["KataLaluan"]);
+    // cek value
+    if (empty($IDPelajar)) {
+        echo "<script>
+            alert('IDPelajar mestilah mempunyai sekurang-kurangnya 1 karakter dan selebih-lebihnya 4 karakter');
+          </script>";
+        return false;
+    }
+    if (strlen($IDPelajar) > 4) {
+        echo "<script>
+            alert('Panjang ID melebihi 4!');
+          </script>";
+        return false;
+    }
+
 
     if (empty($IDPelajar || $Nama_Pelajar || $KataLaluan)) {
         echo "<script>
@@ -267,6 +281,13 @@ function registrasi($data)
     $KataLaluan = mysqli_real_escape_string($conn, $data["KataLaluan"]);
     $KataLaluan2 = mysqli_real_escape_string($conn, $data["KataLaluan2"]);
     //cek klau kosong value
+    if (empty($IDPelajar)) {
+        echo "<script>
+				alert('IDPelajar mestilah mempunyai sekurang-kurangnya 1 karakter dan selebih-lebihnya 4 karakter');
+		      </script>";
+        return false;
+    }
+    // 
     if (empty($IDPelajar && $Nama_Pelajar && $KataLaluan && $KataLaluan2)) {
         echo "<script>
 				alert('Sila isi semua ruang borang signup!');
@@ -286,7 +307,7 @@ function registrasi($data)
     // cek panjang string
     if (strlen($IDPelajar) > 4) {
         echo "<script>
-            alert('Panjang ID melebihi 4');
+            alert('Panjang ID melebihi 4!');
           </script>";
         return false;
     }
@@ -323,4 +344,23 @@ function padamJawapan($data)
     }
     mysqli_query($conn, $sql);
     return mysqli_affected_rows($conn);
+}
+
+// fungsi kira senarai
+function kiraBaris($table)
+{
+    global $conn;
+    $result = mysqli_query($conn, "SELECT COUNT(*) FROM $table;
+    ");
+    $row = mysqli_fetch_array($result);
+    $total = $row[0];
+    echo $total;
+}
+
+function sec($aras)
+{
+    if ($_SESSION['status'] != $aras) {
+        header("Location: login.php");
+        exit;
+    }
 }

@@ -1,12 +1,10 @@
 <?php
 session_start();
+require "functions.php";
+sec("guru");
 $title = "Soalan";
 require "header.php";
-if ($_SESSION['status'] != "guru") {
-    header("Location: login.php");
-    exit;
-}
-require "functions.php";
+
 include "css/senarai.php";
 include "css/button.php";
 $soalan = query("SELECT * FROM soalan");
@@ -37,6 +35,10 @@ if (isset($_POST["submit"])) {
 
 ?>
 
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+</head>
 
 <body>
     <?php include "./include/menu.php" ?>
@@ -111,7 +113,8 @@ if (isset($_POST["submit"])) {
                         <td class="tak"><input required type="text" name="IDGuru" id="IDGuru" value="<?= $_SESSION['username'] ?>"></td>
                     </tr>
                 </table>
-                <button type="submit" class="tambah" name="submit">Tambah</button>
+                <button type="submit" class="tambah" name="submit"><i class="fa fa-plus" aria-hidden="true"></i>
+                    Tambah</button>
 
             </form>
             <br>
@@ -141,35 +144,36 @@ if (isset($_POST["submit"])) {
                 }
             } ?>
 
-            <div class="kandungan">
-                <h3 class="panjang">Padam Jawapan Pelajar</h3>
-                <!-- mula form -->
-                <form class="panjang" action="" method="POST">
-                    <!-- papar pilihan; js akan pilih ikut value -->
-                    <select name='pilihan' id='pilihan' onchange='padam_pilihan()'>
-                        <option value="1">Padam Semua Jawapan Pelajar</option>
-                        <option value="2">Padam Mengikut Kelas</option>
-                        <option value="3">Mengikut ID Pelajar</option>
+
+            <h3 class="panjang">Padam Jawapan Pelajar</h3>
+            <!-- mula form -->
+            <form class="panjang" action="" method="POST">
+                <!-- papar pilihan; js akan pilih ikut value -->
+                <select name='pilihan' id='pilihan' onchange='padam_pilihan()'>
+                    <option value="1">Padam Semua Jawapan Pelajar</option>
+                    <option value="2">Padam Mengikut Kelas</option>
+                    <option value="3">Mengikut ID Pelajar</option>
+                </select>
+
+                <br>
+                <div id="kelas" style="display: none;">
+                    <select name="IDKelas">
+                        <?php
+                        kelaslist()
+                        ?>
                     </select>
+                </div>
 
-                    <br>
-                    <div id="kelas" style="display: none;">
-                        <select name="IDKelas">
-                            <?php
-                            kelaslist()
-                            ?>
-                        </select>
-                    </div>
+                <div id="pelajar" style="display: none;">
+                    <input type="text" placeholder="ID Pelajar" maxlength="4" name="IDPelajar">
+                </div>
+                <!-- batas ke butang -->
+                <button class="padam" name="padam" type="submit" onclick="return confirm('Yakin hendak padam jawapan pelajar');">Padam</button>
+            </form>
+            <?php echo "<script src='js/laporan.js'></script>" ?>
+    </div>
+    <script src="https://use.fontawesome.com/6154921c1c.js"></script>
 
-                    <div id="pelajar" style="display: none;">
-                        <input type="text" placeholder="ID Pelajar" maxlength="4" name="IDPelajar">
-                    </div>
-                    <!-- batas ke butang -->
-                    <button class="padam" name="padam" type="submit" onclick="return confirm('Yakin hendak padam jawapan pelajar');">Padam</button>
-                </form>
-                <?php echo "<script src='js/laporan.js'></script>" ?>
-            </div>
-            <?php include "footer.php" ?>
 </body>
 
 </html>

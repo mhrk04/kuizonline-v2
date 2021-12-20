@@ -1,12 +1,10 @@
 <?php
 session_start();
+require "functions.php";
+sec("pelajar");
 $title = "Mula Kuiz";
 require "header.php";
-if ($_SESSION['status'] != "pelajar") {
-    header("Location: login.php");
-    exit;
-}
-require "functions.php";
+
 $IDPelajar = $_SESSION['username'];
 
 $sql1 = "SELECT * FROM kuiz WHERE IDPelajar = '$IDPelajar'";

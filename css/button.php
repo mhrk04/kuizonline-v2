@@ -24,9 +24,6 @@
     background-color: yellowgreen;
   }
 
-  button.tambah {
-    background: url('css/img/add.png') no-repeat;
-  }
 
   button.simpan {
     background-image: url(/img/save.png);
@@ -78,6 +75,10 @@
     background: url(css/img/betul.png) no-repeat;
     color: white;
     border: 1px solid black
+  }
+
+  button.tambah:hover {
+    background-color: darkgreen;
   }
 
   button:hover {

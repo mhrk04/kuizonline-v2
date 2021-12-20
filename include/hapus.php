@@ -1,13 +1,26 @@
 <?php
 session_start();
+require "../functions.php";
+
+if ($_GET == false) {
+    header("Location: ../login.php");
+    exit;
+}
 if ($_SESSION['status'] != "guru") {
     header("Location: ../login.php");
     exit;
 }
-require "../functions.php";
 
 
 $id = $_GET["id"];
+if ($id == "G01") {
+    echo "
+         <script>
+         alert('Tidak Boleh Memadam User Ini !');
+         document.location.href = '../guru_senarai.php';
+         </script>";
+    exit;
+}
 $fill = $_GET["fill"];
 $table = $_GET["table"];
 if ($id == $_SESSION['username'] && $table == 'guru') {

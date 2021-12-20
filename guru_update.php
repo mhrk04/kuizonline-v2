@@ -1,15 +1,20 @@
 <?php
 session_start();
+require "functions.php";
+sec("guru");
 $title = "Kemaskini Guru";
 require "header.php";
 include "css/button.php";
-if ($_SESSION['status'] != "guru") {
-    header("Location: login.php");
-    exit;
-}
-require "functions.php";
 
 $id = $_GET["id"];
+if ($id != $_SESSION['username']) {
+    echo "
+         <script>
+         alert('Anda Tidak Boleh Mengubah Maklumat Pengguna Ini !');
+         document.location.href = 'guru_senarai.php';
+         </script>";
+    exit;
+}
 $guru = query("SELECT * FROM guru WHERE IDGuru = '$id'")[0];
 
 if (isset($_POST["submit"])) {
